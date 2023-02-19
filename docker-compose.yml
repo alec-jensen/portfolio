@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+    client:
+        image: portfolio
+        ports:
+            - 1443:3000
