@@ -1,0 +1,1 @@
+export default {"styles": {"global": {"body": {"color": "#2D4263", "backgroundColor": "#202124"}}}}
