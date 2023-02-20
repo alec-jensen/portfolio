@@ -29,11 +29,13 @@ def index() -> pc.Component:
             pc.divider(border_color=DIVIDER_COLOR),
             pc.spacer(width="20px"),
             pc.hstack(
-                pc.link(pc.image(src="/github-mark.svg", height="60px"), href="https://github.com/alec-jensen", is_external=True, color=TITLE_COLOR),
                 pc.spacer(),
-                pc.link(pc.image(src="/discord.svg", height="70px"), href="https://discord.gg/JjWEVXttFR", is_external=True, color=TITLE_COLOR),
+                pc.link(pc.image(src="/github-mark.svg", width="70px"), href="https://github.com/alec-jensen", is_external=True, color=TITLE_COLOR),
                 pc.spacer(),
-                pc.link(pc.image(src="/youtube.svg", height="70px"), href="https://www.youtube.com/@alecjensen", is_external=True, color=TITLE_COLOR),
+                pc.link(pc.image(src="/discord.svg", width="70px"), href="https://discord.gg/JjWEVXttFR", is_external=True, color=TITLE_COLOR),
+                pc.spacer(),
+                pc.link(pc.image(src="/youtube.svg", width="70px"), href="https://www.youtube.com/@alecjensen", is_external=True, color=TITLE_COLOR),
+                pc.spacer(),
                 height="70px",
                 width="30%"
             ),
