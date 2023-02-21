@@ -71,5 +71,5 @@ app = pc.App(state=State, style=style,
     ],
     description="Alec Jensen's Portfolio",)
 
-app.add_page(index, route="/", title="Alec Jensen")
+app.add_page(index, route="/", title="Alec Jensen", description="Alec Jensen's Portfolio")
 app.compile()
