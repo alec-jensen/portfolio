@@ -20,6 +20,7 @@ class State(pc.State):
 
 def index() -> pc.Component:
     return pc.center(
+        pc.html('<meta name="viewport" content="width=device-width, initial-scale=1.0">'),
         pc.vstack(
             pc.heading("Alec Jensen", font_family="Open Sans", font_size="4em", text_align="center", color=TITLE_COLOR),
             pc.spacer(width="20px"),
