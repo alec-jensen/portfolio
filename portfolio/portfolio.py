@@ -24,11 +24,11 @@ def index() -> pc.Component:
         pc.vstack(
             pc.heading("Alec Jensen", font_family="Open Sans", font_size="4em", text_align="center", color=TITLE_COLOR),
             pc.spacer(width="20px"),
-            pc.icon(tag="MinusIcon", color=PARAGRAPH_COLOR),
+            pc.icon(tag="minus", color=PARAGRAPH_COLOR),
             pc.spacer(width="20px"),
-            pc.text("Frontend Developer | Backend Developer | 3D Artist | Musician | Drone Pilot | ", pc.link(pc.span("Photographer ", pc.icon(tag="ExternalLinkIcon")), color="#8AB4F8", href="https://cloud.alecj.tk/s/3fXAebqGMpAYyXe", is_external=True), text_align="center", font_size="22px", font_weight="bold", color=PARAGRAPH_COLOR),
+            pc.text("Frontend Developer | Backend Developer | 3D Artist | Musician | Drone Pilot | ", pc.link(pc.span("Photographer ", pc.icon(tag="external_link")), color="#8AB4F8", href="https://cloud.alecj.tk/s/3fXAebqGMpAYyXe", is_external=True), text_align="center", font_size="22px", font_weight="bold", color=PARAGRAPH_COLOR),
             pc.spacer(width="20px"),
-            pc.icon(tag="MinusIcon", color=PARAGRAPH_COLOR),
+            pc.icon(tag="minus", color=PARAGRAPH_COLOR),
             pc.spacer(width="20px"),
             pc.hstack(
                 pc.spacer(),
@@ -42,7 +42,7 @@ def index() -> pc.Component:
                 width="30%"
             ),
             pc.spacer(width="20px"),
-            pc.icon(tag="MinusIcon", color=PARAGRAPH_COLOR),
+            pc.icon(tag="minus", color=PARAGRAPH_COLOR),
             pc.spacer(width="20px"),
             pc.text("I'm a 15-year-old who is passionate about technology. I have a lot of experience creating frontends and backends using languages like Python, Java, and C++. When I'm not programming, I enjoy taking pictures, making videos, and playing the viola.",
                     text_align="center", width="40em", font_size="21px", color=PARAGRAPH_COLOR),
