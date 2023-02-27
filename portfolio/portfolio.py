@@ -15,12 +15,13 @@ filename = f"{config.app_name}/{config.app_name}.py"
 
 class State(pc.State):
     @pc.var
-    def random_bg(self):
+    def random_bg(self) -> str:
+        i=random.randint(1, 6)
+        print(f"bg{i}.svg")
         return f"/bgs/bg{random.randint(1, 6)}.svg"
 
 def index() -> pc.Component:
     return pc.center(
-        pc.html('<meta name="viewport" content="width=device-width, initial-scale=1.0">'),
         pc.vstack(
             pc.heading("Alec Jensen", font_family="Open Sans", font_size="4em", text_align="center", color=TITLE_COLOR),
             pc.spacer(width="20px"),
@@ -38,15 +39,15 @@ def index() -> pc.Component:
                 pc.spacer(),
                 pc.link(pc.image(src="/youtube.svg", height="100%"), href="https://www.youtube.com/@alecjensen", is_external=True, color=TITLE_COLOR),
                 pc.spacer(),
-                height="3em",
+                height="10%",
                 width="30%"
             ),
             pc.spacer(width="20px"),
             pc.icon(tag="minus", color=PARAGRAPH_COLOR),
             pc.spacer(width="20px"),
             pc.text("I'm a 15-year-old who is passionate about technology. I have a lot of experience creating frontends and backends using languages like Python, Java, and C++. When I'm not programming, I enjoy taking pictures, making videos, and playing the viola.",
-                    text_align="center", width="40em", font_size="21px", color=PARAGRAPH_COLOR),
-            width="70em",
+                    text_align="center", width="80%", font_size="21px", color=PARAGRAPH_COLOR),
+            width="70vw",
             padding="20px",
             border_radius="10px",
             backdrop_filter="blur(10px)",
