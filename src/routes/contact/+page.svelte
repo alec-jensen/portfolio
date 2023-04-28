@@ -1,6 +1,6 @@
 <svelte:head>
 	<title>Contact</title>
-	<meta name="description" content="About this app" />
+	<meta name="contact me" content="Contact Alec Jensen" />
 </svelte:head>
 
 <div class="text-column">
@@ -11,6 +11,12 @@
 	</p>
 	<p>
 		<a href="https://github.com/alec-jensen" target="_blank">GitHub</a>
+	</p>
+	<p>
+		AlecJ#2809 (discord)
+	</p>
+	<p>
+		<a href="https://youtube.com/@alecjensen" target="_blank">YouTube</a>
 	</p>
 </div>
 

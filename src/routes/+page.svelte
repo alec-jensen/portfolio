@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="home" content="Alec Jensen portfolio" />
 </svelte:head>
 
 <section>

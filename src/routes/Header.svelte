@@ -33,6 +33,7 @@
 		</a>
 	</div> -->
 	</nav>
+	<div class="indicator"><span class="material-symbols-outlined"> expand_more </span></div>
 </header>
 
 <style>
@@ -139,5 +140,15 @@
 
 	a:hover {
 		color: var(--color-theme-1);
+	}
+
+	.indicator {
+		margin-top: 10px;
+	}
+
+	@media (max-width: 720px) {
+		.indicator {
+			display: none;
+		}
 	}
 </style>
