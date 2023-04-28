@@ -1,6 +1,6 @@
 <svelte:head>
 	<title>Contact</title>
-	<meta name="contact me" content="Contact Alec Jensen" />
+	<meta name="description" content="Contact Alec Jensen" />
 </svelte:head>
 
 <div class="text-column">

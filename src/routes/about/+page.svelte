@@ -36,7 +36,7 @@
 
 <svelte:head>
 	<title>About</title>
-	<meta name="about me" content="Information about me" />
+	<meta name="description" content="Information about me" />
 </svelte:head>
 
 <div class="text-column">
@@ -108,7 +108,7 @@
 
 	@media (min-width: 768px) {
 		.text-column {
-			padding-top: 30vh;
+			padding-top: 24vh;
 			padding-bottom: 14vh;
 		}
 	}
