@@ -47,4 +47,18 @@
 	h3 {
 		font-weight: 200;
 	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 60px;
+		}
+
+		h2 {
+			font-size: 20px;
+		}
+
+		h3 {
+			font-size: 15px;
+		}
+	}
 </style>
