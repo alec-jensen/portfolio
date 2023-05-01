@@ -65,7 +65,7 @@
 		display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.068);
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(10px) brightness(60%);
 		background: var(--background);
 		background-size: contain;
 		position: fixed;
@@ -144,6 +144,12 @@
 
 	.indicator {
 		margin-top: 10px;
+		user-select: none;
+	}
+
+	nav:hover + .indicator {
+		opacity: 0;
+		transition: opacity 400ms linear;
 	}
 
 	@media (max-width: 720px) {

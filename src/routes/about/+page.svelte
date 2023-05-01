@@ -191,10 +191,6 @@
 		transition: background 0.5s ease-in-out;
 	}
 
-	.timeline ul li.in-view::after {
-		background: rgb(46, 45, 45);
-	}
-
 	.timeline ul li div {
 		visibility: hidden;
 		opacity: 0;
@@ -216,20 +212,12 @@
 	}
 
 	@media screen and (max-width: 768px) {
-		.timeline ul li div {
-			width: 250px;
-		}
-		.timeline ul li:nth-child(even) div {
-			left: -289px;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
 		.timeline ul li {
 			margin-left: 20px;
+			margin-right: 0px;
 		}
 		.timeline ul li div {
-			width: calc(100vw - 91px);
+			width: calc(70vw - 91px);
 		}
 		.timeline ul li:nth-child(even) div {
 			left: 45px;

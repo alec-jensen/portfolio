@@ -24,6 +24,12 @@ body {
 	background-image: radial-gradient(circle at 24.1% 68.8%, rgb(24, 24, 24) 0%, rgb(0, 0, 0) 99.4%);
 }
 
+@media (max-width: 720px) {
+	body {
+		background-image: none;
+	}
+}
+
 h1,
 h2,
 p {
