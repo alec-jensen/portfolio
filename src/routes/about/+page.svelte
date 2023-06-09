@@ -62,7 +62,7 @@
 	</p>
 </div>
 
-<p style="color: gray;"><em>(scroll down)</em></p>
+<!--<p style="color: gray;"><em>(scroll down)</em></p>-->
 
 <style>
 	p {
