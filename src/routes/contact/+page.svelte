@@ -16,7 +16,7 @@
 		<a href="https://discord.com/users/766373301169160242" target="_blank">Discord</a>
 	</p>
 	<p>
-		<a href="https://youtube.com/@alecjensen" target="_blank">YouTube</a>
+		<a href="https://youtube.com/@alec.j" target="_blank">YouTube</a>
 	</p>
 </div>
 
