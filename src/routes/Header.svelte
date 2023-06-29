@@ -81,12 +81,12 @@
 	@media (min-width: 720px) {
 		nav {
 			transition: top 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
-			top: -40px;
+			/*top: -40px;*/
 		}
 
 		nav:hover {
 			transition: top 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
-			top: 0px;
+			/*top: 0px;*/
 		}
 	}
 
