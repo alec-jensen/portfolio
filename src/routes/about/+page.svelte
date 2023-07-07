@@ -45,7 +45,7 @@
 	<p>
 		I am Alec Jensen, a software developer from the United States. I have been programming since
 		2018, starting with C on an Arduino Uno. I have since learned C++, Python, Java, JavaScript,
-		TypeScript, Svelte and SvelteKit.
+		Svelte and SvelteKit.
 	</p>
 
 	<!-- <pre>npm create svelte@latest</pre> -->
