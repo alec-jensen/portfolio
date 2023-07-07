@@ -11,7 +11,7 @@
 <section>
 	<h1>Hi, I'm <name>Alec Jensen</name></h1>
 	<h2>fullstack developer</h2>
-	<h3>c++/python/java/js/ts</h3>
+	<h3>c++/python/java/js</h3>
 
 	<!-- <h2>
 	<a href="/about">About me</a>
