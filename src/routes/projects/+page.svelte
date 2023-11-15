@@ -1,86 +1,182 @@
-<script>
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		'use strict';
-
-		// define variables
-		var items = document.querySelectorAll('.timeline li');
-
-		// check if an element is in viewport
-		// http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-		function isElementInViewport(el) {
-			var rect = el.getBoundingClientRect();
-			return (
-				rect.top >= 0 &&
-				rect.left >= 0 &&
-				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			);
-		}
-
-		function callbackFunc() {
-			for (var i = 0; i < items.length; i++) {
-				if (isElementInViewport(items[i])) {
-					items[i].classList.add('in-view');
-				}
-			}
-		}
-
-		// listen for events
-		window.addEventListener('load', callbackFunc);
-		window.addEventListener('resize', callbackFunc);
-		window.addEventListener('scroll', callbackFunc);
-	});
-</script>
-
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="Information about me" />
 </svelte:head>
 
-<div class="text-column">
-	<h1>About me</h1>
+<div class="page">
+	<h1>My Projects</h1>
 
-	<p>
-		I am Alec Jensen, a software developer from the United States. I have been programming since
-		2018, starting with C on an Arduino Uno. I have since learned C++, Python, Java, JavaScript,
-		TypeScript, Svelte and SvelteKit.
-	</p>
+	<div class="projects">
+		<div class="project_card">
+			<img class="project_card__image" src="/images/kidney-bot.png" alt="kidney-bot" />
 
-	<!-- <pre>npm create svelte@latest</pre> -->
+			<div class="project_card__header">
+				<h2>kidney bot</h2>
+				<p>
+					kidney bot is an open source discord bot designed to help effectively moderate
+					communities, while at the same time keeping privacy paramout.
+				</p>
 
-	<p>
-		I enjoy making cool projects using the technologies I have learned, and learning new ones to do
-		even more cool stuff!
-	</p>
+				<div class="project_card__links">
+					<a href="https://kidneybot.alecj.tk" target="_blank">Website</a>
+					<a href="https://github.com/alec-jensen/kidney-bot" target="_blank">Github</a>
+				</div>
+			</div>
+		</div>
 
-	<p>
-		Outside of programming, I enjoy playing the viola, flying my drone, and making youtube videos. I
-		also enjoy playing video games, my favorite being Minecraft. I am in the computer science club
-		and roboboat club at my school.
-	</p>
+		<div class="project_card">
+			<img class="project_card__image" src="/images/generalutils.png" alt="generalutils" />
+
+			<div class="project_card__header">
+				<h2>GeneralUtils</h2>
+				<p>
+					GeneralUtils is a no-bs spigot plugin designed to replace Essentials, while doing exactly
+					what is asked of it and nothing more.
+				</p>
+
+				<div class="project_card__links">
+					<a href="https://github.com/alec-jensen/generalutils" target="_blank">Github</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="project_card">
+			<img class="project_card__image" src="/images/firescript.png" alt="firescript" />
+
+			<div class="project_card__header">
+				<h2>firescript</h2>
+				<p>
+					firescript is a new programming language that can be compiled natively or to JavaScript,
+					designed for use in the web. It is strongly & statically typed, and the major philosophy
+					is "simplicity through explicitness"
+				</p>
+
+				<div class="project_card__links">
+					<a href="https://github.com/alec-jensen/firescript" target="_blank">Github</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="project_card">
+			<img class="project_card__image" src="/images/mhseals.png" alt="mhseals" />
+
+			<div class="project_card__header">
+				<h2>MHSeals (Roboboat team)</h2>
+				<p>
+					MHSeals is a Roboboat team based out of Arlington, TX. We are the only highscool team in the competition.
+				</p>
+
+				<div class="project_card__links">
+					<a href="https://github.com/MHSeals" target="_blank">Github</a>
+					<a href="https://mhsroboboat.com/" target="_blank">Website</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<p style="color: gray;"><em>(scroll down)</em></p>
-
 <style>
+	h2 {
+		font-size: 26px;
+	}
+
 	p {
-		font-size: 18px;
+		font-size: 16px;
 		text-align: center;
 	}
 
-	@media (min-width: 768px) {
-		.text-column {
-			padding-top: 24vh;
-			padding-bottom: 14vh;
-		}
+	.projects {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.project_card {
+		background-color: var(--color-bg-2);
+		padding: 1em;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		width: fit-content;
+		align-items: center;
+
+		margin: 1em;
+	}
+
+	.project_card__header {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: center;
+
+		max-width: 20vw;
+		height: 100%;
+	}
+
+	.project_card__header h2 {
+		margin: 0;
+		font-weight: bold;
+	}
+
+	.project_card__header p {
+		margin: 0;
+	}
+
+	.project_card__links {
+		display: flex;
+		justify-content: space-evenly;
+
+		margin-top: 1em;
+	}
+
+	.project_card__links a {
+		color: white;
+		text-decoration: none;
+		padding: 0.5em 2em;
+		background-color: var(--color-theme-2);
+		border-radius: 10px;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.project_card__links a:hover {
+		background-color: var(--color-theme-1);
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.project_card__image {
+		max-height: 25vh;
+		width: auto;
+		border-radius: 10px;
+
+		margin-bottom: 10px;
+	}
+
+	.page {
+		padding-top: 5vh;
+		padding-bottom: 1em;
+		height: 100%;
+		width: 100%;
 	}
 
 	@media (max-width: 768px) {
-		.text-column {
+		.page {
 			padding-top: 10vh;
 			padding-bottom: 10vh;
+		}
+
+		.project_card {
+			max-width: 80vw;
+		}
+
+		.project_card__header {
+			max-width: 80vw;
+		}
+
+		.project_card__image {
+			max-width: 80vw;
 		}
 	}
 </style>

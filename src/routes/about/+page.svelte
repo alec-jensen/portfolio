@@ -1,39 +1,3 @@
-<script>
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		'use strict';
-
-		// define variables
-		var items = document.querySelectorAll('.timeline li');
-
-		// check if an element is in viewport
-		// http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-		function isElementInViewport(el) {
-			var rect = el.getBoundingClientRect();
-			return (
-				rect.top >= 0 &&
-				rect.left >= 0 &&
-				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			);
-		}
-
-		function callbackFunc() {
-			for (var i = 0; i < items.length; i++) {
-				if (isElementInViewport(items[i])) {
-					items[i].classList.add('in-view');
-				}
-			}
-		}
-
-		// listen for events
-		window.addEventListener('load', callbackFunc);
-		window.addEventListener('resize', callbackFunc);
-		window.addEventListener('scroll', callbackFunc);
-	});
-</script>
-
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="Information about me" />
@@ -48,8 +12,6 @@
 		Svelte and SvelteKit.
 	</p>
 
-	<!-- <pre>npm create svelte@latest</pre> -->
-
 	<p>
 		I enjoy making cool projects using the technologies I have learned, and learning new ones to do
 		even more cool stuff!
@@ -61,8 +23,6 @@
 		and roboboat club at my school.
 	</p>
 </div>
-
-<!--<p style="color: gray;"><em>(scroll down)</em></p>-->
 
 <style>
 	p {

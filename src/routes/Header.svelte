@@ -23,6 +23,9 @@
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about"><span class="material-symbols-outlined">person</span></a>
 			</li>
+			<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
+				<a href="/projects"><span class="material-symbols-outlined">code</span></a>
+			</li>
 			<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
 				<a href="/contact"><span class="material-symbols-outlined">mail</span></a>
 			</li>
