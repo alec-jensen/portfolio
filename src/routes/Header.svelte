@@ -36,7 +36,6 @@
 		</a>
 	</div> -->
 	</nav>
-	<div class="indicator"><span class="material-symbols-outlined"> expand_more </span></div>
 </header>
 
 <style>
@@ -81,18 +80,6 @@
 		border-bottom-right-radius: 10px;
 	}
 
-	@media (min-width: 720px) {
-		nav {
-			transition: top 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
-			/*top: -40px;*/
-		}
-
-		nav:hover {
-			transition: top 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
-			/*top: 0px;*/
-		}
-	}
-
 	ul {
 		position: relative;
 		padding: 0;
@@ -109,19 +96,12 @@
 		position: relative;
 		height: 100%;
 		padding: 0 2rem;
+		border-radius: 10px;
 	}
 
-	/* li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	} */
+	li:hover {
+		background: var(--color-bg-2);
+	}
 
 	li[aria-current='page'] a {
 		color: var(--color-theme-1);
@@ -145,19 +125,23 @@
 		color: var(--color-theme-1);
 	}
 
-	.indicator {
-		margin-top: 10px;
-		user-select: none;
-	}
-
-	nav:hover + .indicator {
-		opacity: 0;
-		transition: opacity 400ms linear;
-	}
-
 	@media (max-width: 720px) {
-		.indicator {
-			display: none;
+		nav {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+
+			top: unset;
+			bottom: 0;
+
+			border-top: 0.5px solid rgb(75, 75, 75);
+			border-left: 0.5px solid rgb(75, 75, 75);
+			border-right: 0.5px solid rgb(75, 75, 75);
+		}
+
+		li:hover {
+			background: unset;
 		}
 	}
 </style>

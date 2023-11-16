@@ -48,4 +48,10 @@
 			padding: 6px 0;
 		}
 	}
+
+	@media (max-width: 720px) {
+		footer {
+			margin-bottom: 3em;
+		}
+	}
 </style>
