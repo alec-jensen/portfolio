@@ -7,20 +7,20 @@
 	<h1>About me</h1>
 
 	<p>
-		I am Alec Jensen, a software developer from the United States. I have been programming since
-		2018, starting with C on an Arduino Uno. I have since learned C++, Python, Java, JavaScript,
-		Svelte and SvelteKit.
+		I am <red>Alec Jensen</red>, a software developer from the <purple>United States</purple>. I have been programming since
+		<orange>2018</orange>, starting with <green>C</green> on an <blue>Arduino Uno</blue>. I have since learned <green>C++</green>, <yellow>Python</yellow>, <orange>Java</orange>,
+		<yellow>JavaScript</yellow>, <orange>Svelte</orange>/<orange>SvelteKit</orange>, and <purple>Astro</purple>.
 	</p>
 
 	<p>
-		I enjoy making cool projects using the technologies I have learned, and learning new ones to do
-		even more cool stuff!
+		I enjoy making <red>cool projects</red> using the <green>technologies</green> I have learned, and learning new ones to do
+		even more cool things!
 	</p>
 
 	<p>
-		Outside of programming, I enjoy playing the viola, flying my drone, and making youtube videos. I
-		also enjoy playing video games, my favorite being Minecraft. I am in the computer science club
-		and roboboat club at my school.
+		Outside of <green>programming</green>, I enjoy playing the <blue>viola</blue>, flying my <orange>drone</orange>, and making <red>youtube videos</red>. I
+		also enjoy playing <purple>video games</purple>, my favorite being <green>Minecraft</green>. I am in the <yellow>computer science</yellow> club
+		and <blue>RoboBoat</blue> club at my school.
 	</p>
 </div>
 
@@ -28,6 +28,31 @@
 	p {
 		font-size: 18px;
 		text-align: center;
+		font-family: var(--font-mono);
+	}
+
+	red {
+		color: rgb(252, 109, 109);
+	}
+
+	green {
+		color: rgb(111, 253, 111);
+	}
+
+	blue {
+		color: rgb(96, 96, 252);
+	}
+
+	yellow {
+		color: rgb(255, 255, 121);
+	}
+
+	orange {
+		color: rgb(252, 178, 104);
+	}
+
+	purple {
+		color: rgb(177, 103, 252);
 	}
 
 	@media (min-width: 768px) {

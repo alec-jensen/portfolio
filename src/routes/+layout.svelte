@@ -43,6 +43,10 @@
 		padding: 6px;
 	}
 
+	footer p {
+		font-family: var(--font-mono);
+	}
+
 	@media (min-width: 480px) {
 		footer {
 			padding: 6px 0;
