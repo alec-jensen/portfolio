@@ -67,8 +67,8 @@
 				</p>
 
 				<div class="project_card__links">
-					<a href="https://github.com/MHSeals" target="_blank">Github</a>
 					<a href="https://mhsroboboat.com/" target="_blank">Website</a>
+					<a href="https://github.com/MHSeals" target="_blank">Github</a>
 				</div>
 			</div>
 		</div>
