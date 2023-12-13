@@ -54,18 +54,4 @@
 	purple {
 		color: rgb(177, 103, 252);
 	}
-
-	@media (min-width: 768px) {
-		.text-column {
-			padding-top: 24vh;
-			padding-bottom: 14vh;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.text-column {
-			padding-top: 10vh;
-			padding-bottom: 10vh;
-		}
-	}
 </style>

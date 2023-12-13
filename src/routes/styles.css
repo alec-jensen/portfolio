@@ -18,11 +18,13 @@
 body {
 	min-height: 100vh;
 	margin: 0;
-	width: 100%;
+	width: 100vw;
 	background-attachment: fixed;
 	background-color: var(--color-bg);
-	background-size: 100vw 100vh;
+	background-size: 100% 100%;
 	background-image: radial-gradient(circle at 24.1% 68.8%, rgb(24, 24, 24) 0%, rgb(0, 0, 0) 99.4%);
+	scrollbar-gutter: stable;
+	overflow-x: hidden;
 }
 
 @media (max-width: 720px) {

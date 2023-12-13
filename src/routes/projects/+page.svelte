@@ -156,7 +156,6 @@
 
 	.page {
 		padding-top: 5vh;
-		padding-bottom: 1em;
 		height: 100%;
 		width: 100%;
 	}
