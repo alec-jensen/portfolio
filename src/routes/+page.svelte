@@ -18,32 +18,42 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
-	function typewriter() {
-		while (prev == description) {
-			description = descriptions[Math.floor(Math.random() * descriptions.length)];
-		}
-
-		prev = description;
-
-		let i = 0;
-		function _typeWriter() {
-			if (i < description.length) {
-				rendered_description += description.charAt(i);
-				i++;
-				setTimeout(_typeWriter, randRange(30, 70));
-			}
-		}
-
-		_typeWriter();
-	}
-
 	onMount(() => {
-		typewriter();
+		function typewriter() {
+			while (prev == description) {
+				description = descriptions[Math.floor(Math.random() * descriptions.length)];
+			}
 
-		setInterval(() => {
-			rendered_description = "";
-			typewriter();
-		}, 4000);
+			prev = description;
+
+			let i = 0;
+			function _typeWriter() {
+				if (i < description.length) {
+					rendered_description = description.substring(0, i + 1);
+					i++;
+					setTimeout(_typeWriter, randRange(30, 70));
+				} else {
+					setTimeout(run, 3000);
+				}
+			}
+
+			_typeWriter();
+		}
+
+		function run() {
+			function _delete() {
+				if (rendered_description.length > 0) {
+					rendered_description = rendered_description.substring(0, rendered_description.length - 1);
+					setTimeout(_delete, randRange(30, 70));
+				} else {
+					typewriter();
+				}
+			}
+
+			_delete();
+		}
+
+		run();
 	});
 </script>
 
@@ -95,6 +105,7 @@
 
 	h2 {
 		font-size: 30px;
+		min-height: 36px;
 	}
 
 	h3 {
@@ -137,6 +148,7 @@
 
 		h2 {
 			font-size: 20px;
+			min-height: 30px;
 		}
 
 		h3 {
