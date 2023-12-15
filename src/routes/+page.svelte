@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 
 	let descriptions = ["fullstack developer", "videographer", "photographer", "backend developer", "frontend developer"];
 
@@ -56,6 +57,15 @@
 	<h2 class="code">{rendered_description}</h2>
 	<h3 class="code">c++/python/java/js</h3>
 
+	<ul>
+		<li>
+			<a href="/projects">Projects</a>
+		</li>
+		<li>
+			<a href="/contact">Contact</a>
+		</li>
+	</ul>
+
 	<!-- <h2>
 	<a href="/about">About me</a>
 	</h2> -->
@@ -89,6 +99,35 @@
 
 	h3 {
 		font-weight: 200;
+	}
+
+	a {
+		text-align: center;
+		font-size: 1.5rem;
+		color: white;
+		text-decoration: none;
+		padding: 0.5em 2em;
+		background-color: var(--color-theme-2);
+		transition: background-color 0.2s ease-in-out;
+		border-radius: 10px;
+	}
+
+	a:hover {
+		background-color: var(--color-theme-1);
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		margin: 0.5em;
 	}
 
 	@media (max-width: 768px) {

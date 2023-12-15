@@ -125,6 +125,12 @@
 			border-top: 0.5px solid rgb(75, 75, 75);
 			border-left: 0.5px solid rgb(75, 75, 75);
 			border-right: 0.5px solid rgb(75, 75, 75);
+
+			width: auto;
+		}
+
+		nav svg {
+			padding: 0 1.4rem;
 		}
 
 		li:hover {

@@ -6,23 +6,27 @@
 <div class="text-column">
 	<h1>Contact me</h1>
 
-	<p>
-		<a href="mailto:alecjensen@protonmail.com" target="_blank">Email</a>
-	</p>
-	<p>
-		<a href="https://github.com/alec-jensen" target="_blank">GitHub</a>
-	</p>
-	<p>
-		<a href="https://discord.com/users/766373301169160242" target="_blank">Discord</a>
-	</p>
-	<p>
-		<a href="https://youtube.com/@alec.j" target="_blank">YouTube</a>
-	</p>
+	<a href="mailto:alecjensen@protonmail.com" target="_blank">Email</a>
+	<a href="https://github.com/alec-jensen" target="_blank">GitHub</a>
+	<a href="https://discord.com/users/766373301169160242" target="_blank">Discord</a>
+	<a href="https://youtube.com/@alec.j" target="_blank">YouTube</a>
 </div>
 
 <style>
-	p {
+	a {
 		text-align: center;
 		font-size: 1.5rem;
+		color: white;
+		text-decoration: none;
+		padding: 0.5em 2em;
+		background-color: var(--color-theme-2);
+		transition: background-color 0.2s ease-in-out;
+		border-radius: 10px;
+		margin: 0.4em;
+	}
+
+	a:hover {
+		background-color: var(--color-theme-1);
+		transition: background-color 0.2s ease-in-out;
 	}
 </style>
