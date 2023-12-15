@@ -1,6 +1,49 @@
 <script>
-	let tool_width = 80;
-	let tool_height = 80;
+	import { onMount } from "svelte";
+
+	let descriptions = ["fullstack developer", "videographer", "photographer", "backend developer", "frontend developer"];
+
+	let description = descriptions[Math.floor(Math.random() * descriptions.length)];
+
+	let prev = "";
+
+	let rendered_description = "";
+
+	/** shut up vscode
+	 * @param {number} min
+	 * @param {number} max
+	 */
+	function randRange(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	function typewriter() {
+		while (prev == description) {
+			description = descriptions[Math.floor(Math.random() * descriptions.length)];
+		}
+
+		prev = description;
+
+		let i = 0;
+		function _typeWriter() {
+			if (i < description.length) {
+				rendered_description += description.charAt(i);
+				i++;
+				setTimeout(_typeWriter, randRange(30, 70));
+			}
+		}
+
+		_typeWriter();
+	}
+
+	onMount(() => {
+		typewriter();
+
+		setInterval(() => {
+			rendered_description = "";
+			typewriter();
+		}, 4000);
+	});
 </script>
 
 <svelte:head>
@@ -10,7 +53,7 @@
 
 <section>
 	<h1>Hi, I'm <name>Alec Jensen</name></h1>
-	<h2 class="code">fullstack developer</h2>
+	<h2 class="code">{rendered_description}</h2>
 	<h3 class="code">c++/python/java/js</h3>
 
 	<!-- <h2>
