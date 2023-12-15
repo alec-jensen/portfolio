@@ -18,6 +18,8 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
+	// im sorry to anyone who has to read this
+
 	onMount(() => {
 		function typewriter() {
 			while (prev == description) {
