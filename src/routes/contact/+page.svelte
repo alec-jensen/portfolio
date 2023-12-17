@@ -6,7 +6,7 @@
 <div class="text-column">
 	<h1>Contact me</h1>
 
-	<a href="mailto:alecjensen@protonmail.com" target="_blank">Email</a>
+	<a href="mailto:alec@alecj.tk" target="_blank">Email</a>
 	<a href="https://github.com/alec-jensen" target="_blank">GitHub</a>
 	<a href="https://discord.com/users/766373301169160242" target="_blank">Discord</a>
 	<a href="https://youtube.com/@alec.j" target="_blank">YouTube</a>
