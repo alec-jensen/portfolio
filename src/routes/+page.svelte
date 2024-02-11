@@ -77,10 +77,6 @@
 			<a href="/contact">Contact</a>
 		</li>
 	</ul>
-
-	<!-- <h2>
-	<a href="/about">About me</a>
-	</h2> -->
 </section>
 
 <style>
@@ -117,17 +113,29 @@
 	a {
 		text-align: center;
 		font-size: 1.5rem;
-		color: white;
+		color: var(--color-theme-1);
+		text-shadow: 0 0 0.5em var(--color-theme-1);
 		text-decoration: none;
 		padding: 0.5em 2em;
-		background-color: var(--color-theme-2);
-		transition: background-color 0.2s ease-in-out;
+		background: none;
+		transition: all 0.2s ease-in-out;
+		background: radial-gradient(circle at 100% 100%, #000000 0, #000000 8px, transparent 8px) 0% 0%/10px 10px no-repeat,
+            radial-gradient(circle at 0 100%, #000000 0, #000000 8px, transparent 8px) 100% 0%/10px 10px no-repeat,
+            radial-gradient(circle at 100% 0, #000000 0, #000000 8px, transparent 8px) 0% 100%/10px 10px no-repeat,
+            radial-gradient(circle at 0 0, #000000 0, #000000 8px, transparent 8px) 100% 100%/10px 10px no-repeat,
+            linear-gradient(#000000, #000000) 50% 50%/calc(100% - 4px) calc(100% - 20px) no-repeat,
+            linear-gradient(#000000, #000000) 50% 50%/calc(100% - 20px) calc(100% - 4px) no-repeat,
+            linear-gradient(134deg, rgba(255,255,255,0) 0%, #ff3e00 100%);
 		border-radius: 10px;
 	}
 
 	a:hover {
+		color: white;
+		text-shadow: none;
 		background-color: var(--color-theme-1);
-		transition: background-color 0.2s ease-in-out;
+		box-shadow: none;
+		transition: all 0.2s ease-in-out;
+		text-decoration: none;
 	}
 
 	ul {
