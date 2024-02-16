@@ -155,10 +155,8 @@
 		align-items: center;
 		list-style: none;
 		padding: 0;
-	}
-
-	li {
-		margin: 0.5em;
+		flex-wrap: wrap;
+		gap: 2rem;
 	}
 
 	.seperator {
