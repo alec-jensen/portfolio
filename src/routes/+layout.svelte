@@ -23,7 +23,7 @@
 	</main>
 
 	<footer>
-		<p>&copy Alec Jensen 2023</p>
+		<p>&copy; Alec Jensen 2023</p>
 	</footer>
 </div>
 

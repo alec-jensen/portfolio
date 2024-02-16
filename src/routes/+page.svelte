@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import { page } from "$app/stores";
+	import { goto } from '$app/navigation';
 
 	let descriptions = ["fullstack developer", "videographer", "photographer", "backend developer", "frontend developer"];
 
@@ -57,6 +58,17 @@
 
 		run();
 	});
+
+	function handleKeydown(event) {
+		console.log(event.key);
+		if (event.key === "a") {
+			goto("/about");
+		} else if (event.key === "p") {
+			goto("/projects");
+		} else if (event.key === "c") {
+			goto("/contact");
+		}
+	}
 </script>
 
 <svelte:head>
@@ -71,13 +83,24 @@
 
 	<ul>
 		<li>
-			<a href="/projects">Projects</a>
+			<a href="/about"><u>a</u>bout</a>
+		</li>
+		<li class="seperator">
+			<p>-</p>
 		</li>
 		<li>
-			<a href="/contact">Contact</a>
+			<a href="/projects"><u>p</u>rojects</a>
+		</li>
+		<li class="seperator">
+			<p>-</p>
+		</li>
+		<li>
+			<a href="/contact"><u>c</u>ontact</a>
 		</li>
 	</ul>
 </section>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <style>
 	section {
@@ -116,26 +139,13 @@
 		color: var(--color-theme-1);
 		text-shadow: 0 0 0.5em var(--color-theme-1);
 		text-decoration: none;
-		padding: 0.5em 2em;
-		background: none;
 		transition: all 0.2s ease-in-out;
-		background: radial-gradient(circle at 100% 100%, #000000 0, #000000 8px, transparent 8px) 0% 0%/10px 10px no-repeat,
-            radial-gradient(circle at 0 100%, #000000 0, #000000 8px, transparent 8px) 100% 0%/10px 10px no-repeat,
-            radial-gradient(circle at 100% 0, #000000 0, #000000 8px, transparent 8px) 0% 100%/10px 10px no-repeat,
-            radial-gradient(circle at 0 0, #000000 0, #000000 8px, transparent 8px) 100% 100%/10px 10px no-repeat,
-            linear-gradient(#000000, #000000) 50% 50%/calc(100% - 4px) calc(100% - 20px) no-repeat,
-            linear-gradient(#000000, #000000) 50% 50%/calc(100% - 20px) calc(100% - 4px) no-repeat,
-            linear-gradient(134deg, rgba(255,255,255,0) 0%, #ff3e00 100%);
 		border-radius: 10px;
 	}
 
 	a:hover {
-		color: white;
 		text-shadow: none;
-		background-color: var(--color-theme-1);
-		box-shadow: none;
-		transition: all 0.2s ease-in-out;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 
 	ul {
@@ -149,6 +159,11 @@
 
 	li {
 		margin: 0.5em;
+	}
+
+	.seperator {
+		position: relative;
+		top: 0.1em;
 	}
 
 	@media (max-width: 768px) {
