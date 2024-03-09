@@ -56,22 +56,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="project_card">
-			<img class="project_card__image" src="/images/mhseals.png" alt="mhseals" />
-
-			<div class="project_card__header">
-				<h2>MHSeals (Roboboat team)</h2>
-				<p>
-					MHSeals is a Roboboat team based out of Arlington, TX. We are the only highscool team in the competition.
-				</p>
-
-				<div class="project_card__links">
-					<a href="https://mhsroboboat.com/" target="_blank">Website</a>
-					<a href="https://github.com/MHSeals" target="_blank">Github</a>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
