@@ -58,17 +58,46 @@
 		</div>
 
 		<div class="project_card">
-			<img class="project_card__image" src="/images/mhseals.png" alt="mhseals" />
+			<!-- <img class="project_card__image" src="" alt="" /> -->
 
 			<div class="project_card__header">
-				<h2>MHSeals (Roboboat team)</h2>
+				<h2>NoteAI</h2>
 				<p>
-					MHSeals is a Roboboat team based out of Arlington, TX. We are the only highscool team in the competition.
+					NoteAI is a tool designed to help students enforce what they have already learned, improving grades and helping them to learn more effectively.
 				</p>
 
 				<div class="project_card__links">
-					<a href="https://mhsroboboat.com/" target="_blank">Website</a>
-					<a href="https://github.com/MHSeals" target="_blank">Github</a>
+					<a href="https://github.com/alec-jensen/NoteAI" target="_blank">Github</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="project_card">
+			<!-- <img class="project_card__image" src="" alt="" /> -->
+
+			<div class="project_card__header">
+				<h2>EnhancedInput</h2>
+				<p>
+					EnhancedInput is a python library designed to make it easier to get input from the user, and to validate that input.
+				</p>
+
+				<div class="project_card__links">
+					<a href="https://github.com/alec-jensen/EnhancedInput" target="_blank">Github</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="project_card">
+			<!-- <img class="project_card__image" src="" alt="" /> -->
+
+			<div class="project_card__header">
+				<h2>botnet</h2>
+				<p>
+					Simple botnet with 3 parts: server, client, and a web interface. The server is written in python, the client in Nim, and the web interface using Astro.
+				</p>
+
+				<div class="project_card__links">
+					<a href="https://github.com/alec-jensen/botnet">GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -89,7 +118,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		width: 100%;
+		min-width: 90%;
 	}
 
 	.project_card {
@@ -100,8 +129,8 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
-		width: fit-content;
 		align-items: center;
+		width: 25vw;
 
 		margin: 1em;
 	}
@@ -167,7 +196,7 @@
 		}
 
 		.project_card {
-			max-width: 80vw;
+			width: 80vw;
 		}
 
 		.project_card__header {

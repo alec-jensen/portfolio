@@ -1,15 +1,21 @@
 <script>
-	import { onMount } from "svelte";
-	import { page } from "$app/stores";
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
-	let descriptions = ["fullstack developer", "videographer", "photographer", "backend developer", "frontend developer"];
+	let descriptions = [
+		'fullstack developer',
+		'videographer',
+		'photographer',
+		'backend developer',
+		'frontend developer'
+	];
 
 	let description = descriptions[Math.floor(Math.random() * descriptions.length)];
 
-	let prev = "";
+	let prev = '';
 
-	let rendered_description = "";
+	let rendered_description = '';
 
 	/** shut up vscode
 	 * @param {number} min
@@ -22,6 +28,8 @@
 	// im sorry to anyone who has to read this
 
 	onMount(() => {
+		// typewriter effect
+
 		function typewriter() {
 			while (prev == description) {
 				description = descriptions[Math.floor(Math.random() * descriptions.length)];
@@ -61,12 +69,12 @@
 
 	function handleKeydown(event) {
 		console.log(event.key);
-		if (event.key === "a") {
-			goto("/about");
-		} else if (event.key === "p") {
-			goto("/projects");
-		} else if (event.key === "c") {
-			goto("/contact");
+		if (event.key === 'a') {
+			goto('/about');
+		} else if (event.key === 'p') {
+			goto('/projects');
+		} else if (event.key === 'c') {
+			goto('/contact');
 		}
 	}
 </script>
@@ -77,9 +85,11 @@
 </svelte:head>
 
 <section>
-	<h1>Hi, I'm <name>Alec Jensen</name></h1>
-	<h2 class="code">{rendered_description}</h2>
-	<h3 class="code">c++/python/java/js</h3>
+	<h1>Hi, I'm <br><name>Alec Jensen</name></h1>
+	<div class="skills">
+		<h2 class="code">{rendered_description}<span class="blinking-cursor">_</span></h2>
+	</div>
+	<h3 class="code">python/java/js</h3>
 
 	<ul>
 		<li>
@@ -112,7 +122,12 @@
 	}
 
 	name {
-		background: radial-gradient(circle at 24.01% 70.97%, #3d60c0, transparent 76%),radial-gradient(circle at 86.98% 7.01%, #2ce5d6, transparent 93%),radial-gradient(circle at 41.98% 69.97%, #5e3541, transparent 36%),radial-gradient(circle at 16.98% 38.04%, #7de590, transparent 6%),radial-gradient(circle at 84.01% 88.99%, #112322, transparent 23%),radial-gradient(circle at 50% 50%, #eeb4c5, #eeb4c5 100%);
+		background: radial-gradient(circle at 24.01% 70.97%, #3d60c0, transparent 76%),
+			radial-gradient(circle at 86.98% 7.01%, #2ce5d6, transparent 93%),
+			radial-gradient(circle at 41.98% 69.97%, #5e3541, transparent 36%),
+			radial-gradient(circle at 16.98% 38.04%, #7de590, transparent 6%),
+			radial-gradient(circle at 84.01% 88.99%, #112322, transparent 23%),
+			radial-gradient(circle at 50% 50%, #eeb4c5, #eeb4c5 100%);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
@@ -122,6 +137,7 @@
 	h1 {
 		width: 100%;
 		font-size: 80px;
+		margin: unset;
 	}
 
 	h2 {
@@ -183,5 +199,79 @@
 
 	.code {
 		font-family: var(--font-mono);
+	}
+
+	.skills {
+		padding: none;
+		background: var(--color-bg-2);
+		border: 1px solid var(--color-border);
+		border-radius: 10px;
+	}
+
+	.skills h2 {
+		padding: 0.25em 0.5em;
+		margin: 0 0 0 0;
+	}
+
+	.blinking-cursor {
+		margin-left: 0.1em;
+		font-weight: 100;
+		font-size: 30px;
+		color: #2e3d48;
+		-webkit-animation: 1s blink step-end infinite;
+		-moz-animation: 1s blink step-end infinite;
+		-ms-animation: 1s blink step-end infinite;
+		-o-animation: 1s blink step-end infinite;
+		animation: 1s blink step-end infinite;
+	}
+
+	@keyframes blink {
+		from,
+		to {
+			color: transparent;
+		}
+		50% {
+			color: var(--color-text);
+		}
+	}
+
+	@-moz-keyframes blink {
+		from,
+		to {
+			color: transparent;
+		}
+		50% {
+			color: var(--color-text);
+		}
+	}
+
+	@-webkit-keyframes blink {
+		from,
+		to {
+			color: transparent;
+		}
+		50% {
+			color: var(--color-text);
+		}
+	}
+
+	@-ms-keyframes blink {
+		from,
+		to {
+			color: transparent;
+		}
+		50% {
+			color: var(--color-text);
+		}
+	}
+
+	@-o-keyframes blink {
+		from,
+		to {
+			color: transparent;
+		}
+		50% {
+			color: var(--color-text);
+		}
 	}
 </style>
