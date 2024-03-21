@@ -4,7 +4,7 @@
 </svelte:head>
 
 <div class="page">
-	<h1>My Projects</h1>
+	<h1>My <rainbow>Projects</rainbow></h1>
 
 	<div class="projects">
 		<div class="project_card">

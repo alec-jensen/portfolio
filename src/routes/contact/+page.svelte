@@ -4,7 +4,7 @@
 </svelte:head>
 
 <div class="text-column">
-	<h1>Contact me</h1>
+	<h1><rainbow>Contact</rainbow> me</h1>
 
 	<a href="mailto:alec@alecj.tk" target="_blank">Email</a>
 	<a href="https://github.com/alec-jensen" target="_blank">GitHub</a>

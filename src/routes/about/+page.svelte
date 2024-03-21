@@ -4,7 +4,7 @@
 </svelte:head>
 
 <div class="text-column">
-	<h1>About me</h1>
+	<h1><rainbow>About</rainbow> me</h1>
 
 	<p>
 		I am <red>Alec Jensen</red>, a software developer from the <purple>United States</purple>. I have been programming since

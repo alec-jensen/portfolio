@@ -110,3 +110,16 @@ button:focus:not(:focus-visible) {
 	width: 1px;
 	white-space: nowrap;
 }
+
+rainbow {
+	background: radial-gradient(circle at 24.01% 70.97%, #3d60c0, transparent 76%),
+		radial-gradient(circle at 86.98% 7.01%, #2ce5d6, transparent 93%),
+		radial-gradient(circle at 41.98% 69.97%, #5e3541, transparent 36%),
+		radial-gradient(circle at 16.98% 38.04%, #7de590, transparent 6%),
+		radial-gradient(circle at 84.01% 88.99%, #112322, transparent 23%),
+		radial-gradient(circle at 50% 50%, #eeb4c5, #eeb4c5 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}

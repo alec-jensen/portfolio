@@ -8,7 +8,10 @@
 		'videographer',
 		'photographer',
 		'backend developer',
-		'frontend developer'
+		'frontend developer',
+		'ml/dl developer',
+		'game developer',
+		'violist',
 	];
 
 	let description = descriptions[Math.floor(Math.random() * descriptions.length)];
@@ -85,7 +88,7 @@
 </svelte:head>
 
 <section>
-	<h1>Hi, I'm <br><name>Alec Jensen</name></h1>
+	<h1>Hi, I'm <br /><rainbow>Alec Jensen</rainbow></h1>
 	<div class="skills">
 		<h2 class="code">{rendered_description}<span class="blinking-cursor">_</span></h2>
 	</div>
@@ -121,17 +124,9 @@
 		flex: 0.6;
 	}
 
-	name {
-		background: radial-gradient(circle at 24.01% 70.97%, #3d60c0, transparent 76%),
-			radial-gradient(circle at 86.98% 7.01%, #2ce5d6, transparent 93%),
-			radial-gradient(circle at 41.98% 69.97%, #5e3541, transparent 36%),
-			radial-gradient(circle at 16.98% 38.04%, #7de590, transparent 6%),
-			radial-gradient(circle at 84.01% 88.99%, #112322, transparent 23%),
-			radial-gradient(circle at 50% 50%, #eeb4c5, #eeb4c5 100%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		color: transparent;
-		-webkit-text-fill-color: transparent;
+	rainbow {
+		font-size: 100px;
+		font-weight: bold;
 	}
 
 	h1 {
@@ -211,13 +206,14 @@
 	.skills h2 {
 		padding: 0.25em 0.5em;
 		margin: 0 0 0 0;
+		text-align: center;
 	}
 
 	.blinking-cursor {
 		margin-left: 0.1em;
 		font-weight: 100;
 		font-size: 30px;
-		color: #2e3d48;
+		color: white;
 		-webkit-animation: 1s blink step-end infinite;
 		-moz-animation: 1s blink step-end infinite;
 		-ms-animation: 1s blink step-end infinite;
