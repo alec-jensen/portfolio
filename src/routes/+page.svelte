@@ -86,19 +86,19 @@
 
 	<ul>
 		<li>
-			<a href="/about"><u>a</u>bout</a>
+			<a href="/about" title="Press the underlined key on your keyboard for fast navigation"><u>a</u>bout</a>
 		</li>
 		<li class="seperator">
 			<p>-</p>
 		</li>
 		<li>
-			<a href="/projects"><u>p</u>rojects</a>
+			<a href="/projects" title="Press the underlined key on your keyboard for fast navigation"><u>p</u>rojects</a>
 		</li>
 		<li class="seperator">
 			<p>-</p>
 		</li>
 		<li>
-			<a href="/contact"><u>c</u>ontact</a>
+			<a href="/contact" title="Press the underlined key on your keyboard for fast navigation"><u>c</u>ontact</a>
 		</li>
 	</ul>
 </section>
