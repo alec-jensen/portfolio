@@ -1,3 +1,9 @@
+<script>
+	import KBNav from '$lib/KBNav.svelte';
+</script>
+
+<KBNav />
+
 <svelte:head>
 	<title>Contact</title>
 	<meta name="description" content="Contact Alec Jensen" />

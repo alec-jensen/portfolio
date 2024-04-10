@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	import KBNav from '$lib/KBNav.svelte';
 
 	let descriptions = [
 		'fullstack developer',
@@ -69,18 +68,9 @@
 
 		run();
 	});
-
-	function handleKeydown(event) {
-		console.log(event.key);
-		if (event.key === 'a') {
-			goto('/about');
-		} else if (event.key === 'p') {
-			goto('/projects');
-		} else if (event.key === 'c') {
-			goto('/contact');
-		}
-	}
 </script>
+
+<KBNav />
 
 <svelte:head>
 	<title>Home</title>
@@ -112,8 +102,6 @@
 		</li>
 	</ul>
 </section>
-
-<svelte:window on:keydown={handleKeydown} />
 
 <style>
 	section {
