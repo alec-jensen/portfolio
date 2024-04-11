@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import KBNav from '$lib/KBNav.svelte';
 
 	let descriptions = [
 		'fullstack developer',
@@ -69,8 +68,6 @@
 		run();
 	});
 </script>
-
-<KBNav />
 
 <svelte:head>
 	<title>Home</title>

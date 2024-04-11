@@ -2,6 +2,7 @@
 	import Header from './Header.svelte';
 	import './styles.css';
 	import { onNavigate } from '$app/navigation';
+    import { goto } from '$app/navigation';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -13,7 +14,26 @@
 			});
 		});
 	});
+	
+
+    function handleKeydown(event) {
+        if (event.shiftKey || event.ctrlKey || event.altKey || event.metaKey) {
+            return;
+        }
+
+        if (event.key === 'h') {
+            goto('/');
+        } else if (event.key === 'a') {
+            goto('/about');
+        } else if (event.key === 'p') {
+            goto('/projects');
+        } else if (event.key === 'c') {
+            goto('/contact');
+        }
+    }
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <div class="app">
 	<Header />
