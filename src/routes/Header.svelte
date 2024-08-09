@@ -4,11 +4,6 @@
 
 <header>
 	<nav>
-		<!-- <div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div> -->
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><title>Home</title><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a>
@@ -23,14 +18,19 @@
 				<a href="/contact"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><title>Contact</title><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg></a>
 			</li>
 			<li>
-				<a href="https://blog.alecj.tk/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><title>Blog (open in new tab)</title><path d="M280-280h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm-80 480q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg></a>
+				<a id="blog_link" href="https://blog.alecj.tk/" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+						<title>Blog (opens in new tab)</title>
+						<mask id="blog_link_mask" x="0" y="0" width="24" height="24">
+							<rect x="0" y="-960" width="960" height="960" fill="white"/>
+							<rect x="550" y="-500" width="5000" height="5000" fill="black"/>
+						</mask>
+						<path d="M240-280h280v-80H240v80Zm400 0h80v-400h-80v400ZM240-440h280v-80H240v80Zm0-160h280v-80H240v80Zm-80 480q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z" mask="url(#blog_link_mask)"/>
+					</svg>
+				</a>
+				<svg id="blog_open_in_new" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
 			</li>
 		</ul>
-		<!-- <div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div> -->
 	</nav>
 </header>
 
@@ -92,7 +92,7 @@
 		fill: var(--color-theme-1);
 	}
 
-	nav svg {
+	nav a svg {
 		display: flex;
 		height: 100%;
 		align-items: center;
@@ -106,8 +106,15 @@
 		transition: fill 0.2s linear;
 	}
 
+	#blog_open_in_new {
+		position: absolute;
+		left: 45px;
+		top: 23px;
+		transition: fill 0.2s linear;
+	}
+
 	@media (min-width: 720px) {
-		nav svg:hover {
+		nav li:hover svg {
 			fill: var(--color-theme-1);
 		}
 	}
@@ -135,6 +142,11 @@
 
 		li:hover {
 			background: unset;
+		}
+
+		#blog_open_in_new {
+			left: 23px;
+			top: 23px;
 		}
 	}
 </style>

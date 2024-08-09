@@ -8,7 +8,7 @@
 
 	<div class="projects">
 		<div class="project_card">
-			<img class="project_card__image" src="/images/kidney-bot.png" alt="kidney-bot" />
+			<!-- <img class="project_card__image" src="/images/kidney-bot.png" alt="kidney-bot" /> -->
 
 			<div class="project_card__header">
 				<h2>kidney bot</h2>
@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="project_card">
-			<img class="project_card__image" src="/images/generalutils.png" alt="generalutils" />
+			<!-- <img class="project_card__image" src="/images/generalutils.png" alt="generalutils" /> -->
 
 			<div class="project_card__header">
 				<h2>GeneralUtils</h2>
@@ -41,14 +41,14 @@
 		</div>
 
 		<div class="project_card">
-			<img class="project_card__image" src="/images/firescript.png" alt="firescript" />
+			<!-- <img class="project_card__image" src="/images/firescript.png" alt="firescript" /> -->
 
 			<div class="project_card__header">
 				<h2>firescript</h2>
 				<p>
-					firescript is a new programming language that can be compiled natively or to JavaScript,
+					firescript is a work in progress programming language that can be compiled natively or to JavaScript,
 					designed for use in the web. It is strongly & statically typed, and the major philosophy
-					is "simplicity through explicitness"
+					is "simplicity through explicit design".
 				</p>
 
 				<div class="project_card__links">
@@ -98,6 +98,21 @@
 
 				<div class="project_card__links">
 					<a href="https://github.com/alec-jensen/botnet">GitHub</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="project_card">
+			<!-- <img class="project_card__image" src="" alt="" /> -->
+
+			<div class="project_card__header">
+				<h2>webserver</h2>
+				<p>
+					Webserver written in Python with support for writing HTML directly with Python.
+				</p>
+
+				<div class="project_card__links">
+					<a href="https://github.com/alec-jensen/webserver">GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -152,6 +167,7 @@
 
 	.project_card__header p {
 		margin: 0;
+		color: lightgray
 	}
 
 	.project_card__links {

@@ -43,7 +43,7 @@
 	</main>
 
 	<footer>
-		<p>&copy; Alec Jensen 2023</p>
+		<p>&copy; Alec Jensen 2023-{new Date().getFullYear()}</p>
 	</footer>
 </div>
 
