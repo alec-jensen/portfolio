@@ -1,0 +1,66 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+interface Props {
+    title?: string;
+	description?: string;
+	image?: string;
+    page_title?: string;
+}
+
+let {
+    title = SITE_TITLE,
+    description = SITE_DESCRIPTION,
+    image = '/favicon.webp',
+    page_title,
+} = Astro.props;
+
+if (page_title) {
+    title = `${page_title} | ${title}`;
+}
+---
+
+<!doctype html>
+<html lang="en" transition:name="root">
+    <head>
+        <BaseHead title={title} description={description} image={image} />
+        <slot name="head" />
+    </head>
+    <body>
+        <div class="container">
+            <Header />
+            <layout_main>
+                <slot />
+            </layout_main>
+            <Footer />
+        </div>
+    </body>
+</html>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    layout_main {
+        flex-grow: 1;
+        margin-top: 1.87em;
+    }
+
+    footer {
+        margin-top: auto;
+    }
+</style>

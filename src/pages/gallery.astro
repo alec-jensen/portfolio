@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Masonry } from "astro-masonry";
+import GalleryImage from "../components/GalleryImage.astro";
+
+export const prerender = true;
+
+const images = [
+  {
+    src: "/photos/_MG_0014-Enhanced-NR.jpg",
+    alt: "A picture of graffiti in an abandoned grain elevator",
+  },
+  {
+    src: "/photos/_MG_0034-Enhanced-NR.jpg",
+    alt: "A picture of a solar eclipse",
+  },
+  {
+    src: "/photos/_MG_0035-Enhanced-NR.jpg",
+    alt: "A picture of a touchdown in a football game",
+  },
+  {
+    src: "/photos/_MG_0129-Enhanced-NR.jpg",
+    alt: "A picture of an eastern screech owl",
+  },
+  {
+    src: "/photos/_MG_0164.jpg",
+    alt: "A picture of the moon",
+  },
+  {
+    src: "/photos/_MG_0742.jpg",
+    alt: "A picture of a zebra",
+  },
+  {
+    src: "/photos/DJI_0190.jpg",
+    alt: "A picture of a lake",
+  },
+  {
+    src: "/photos/hospital--6.jpg",
+    alt: "A picture of an abandoned hospital",
+  },
+  {
+    src: "/photos/_MG_0897-Enhanced-NR.jpg",
+    alt: "A picture of a camp",
+  },
+  {
+    src: "/photos/_MG_0015-Enhanced-NR.jpg",
+    alt: "A picture of an abandoned building",
+  },
+];
+---
+
+<Layout page_title="Gallery">
+  <script src="{imagesLoaded}" slot="head"></script>
+  <script src="{masonry}" slot="head"></script>
+  <main>
+    <h1>Gallery</h1>
+    <div class="gallery">
+      <Masonry
+        breakpointCols={{
+          default: 4,
+          1100: 3,
+          700: 2,
+          500: 1,
+        }}
+      >
+        {
+          images.map((image) => (
+            <div class="gallery-item">
+              <GalleryImage src={image.src} alt={image.alt} />
+            </div>
+          ))
+        }
+      </Masonry>
+    </div>
+  </main>
+</Layout>
+
+<script type="module"></script>
+
+<style>
+  main {
+    padding: 1em;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: center;
+  }
+
+  .gallery-item {
+    margin: 0.5em;
+  }
+</style>

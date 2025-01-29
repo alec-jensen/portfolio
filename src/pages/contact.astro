@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { isEmailValid } from "@hapi/address";
+import nodemailer from "nodemailer";
+
+const errors = {
+  name: "",
+  email: "",
+  message: "",
+};
+
+let success = false;
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("name")?.toString();
+    const email = data.get("email")?.toString();
+    const message = data.get("message")?.toString();
+
+    if (!name) {
+      errors.name = "Name is required";
+      throw new Error("Name is required");
+    } else if (!email) {
+      errors.email = "Email is required";
+      throw new Error("Email is required");
+    } else if (!message) {
+      errors.message = "Message is required";
+      throw new Error("Message is required");
+    } else if (!isEmailValid(email)) {
+      errors.email = "Invalid email address";
+      throw new Error("Invalid email address");
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: import.meta.env.SMTP_HOST,
+      port: import.meta.env.SMTP_PORT,
+      auth: {
+        user: import.meta.env.SMTP_USER,
+        pass: import.meta.env.SMTP_PASS,
+      },
+    });
+
+    try {
+      transporter.sendMail({
+        from: email,
+        to: import.meta.env.CONTACT_DESTINATION_EMAIL,
+        subject: `New message from ${name} <${email}>`,
+        text: message,
+      });
+    } catch (error) {
+      console.error(error);
+      errors.message = "Failed to send email";
+      throw new Error("Failed to send email");
+    }
+
+    success = true;
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<Layout page_title="Contact">
+  <main>
+    <h1>Contact</h1>
+    <section>
+      <form method="POST">
+        <div class="info">
+          <div class="info-item">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              required
+            />
+            {errors.name && <p class="error">{errors.name}</p>}
+          </div>
+          <div class="info-item">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john@example.com"
+              required
+            />
+            {errors.email && <p class="error">{errors.email}</p>}
+          </div>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your message here"
+            required></textarea>
+          {errors.message && <p class="error">{errors.message}</p>}
+        </div>
+        <button type="submit">Send</button>
+        {success && <p>Message sent!</p>}
+      </form>
+    </section>
+    <section>
+      <h2>Email</h2>
+      <p>
+        You can reach me at: <a href="mailto:alec@alecj.tk">alec@alecj.tk</a>
+      </p>
+    </section>
+    <section>
+      <h2>Instagram</h2>
+      <p>
+        Follow me on Instagram: <a
+          href="https://www.instagram.com/alec.j.is.a.nerd/"
+          target="_blank">@alec.j.is.a.nerd</a
+        >
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  section {
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  input,
+  textarea {
+    padding: 0.5em 0.5em;
+    border: 1px solid rgb(var(--gray-light));
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Newsreader", sans-serif;
+  }
+
+  .info {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+  }
+
+  .info-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #message {
+    height: 10em;
+    width: 100%;
+  }
+
+  button {
+    font-family: "Newsreader", sans-serif;
+    padding: 0.75em;
+    width: 100%;
+    background-color: var(--cerise);
+    color: white;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: var(--pumpkin);
+  }
+
+  .error {
+    color: var(--red);
+    font-size: 0.8em;
+  }
+</style>

@@ -1,0 +1,1 @@
+If you happen to stumble across this, all of these pictures are licensed under **CC BY-NC-SA 4.0** (<https://creativecommons.org/licenses/by-nc-sa/4.0/>)

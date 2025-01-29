@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = true;
+---
+
+<Layout page_title='Home'>
+	<main>
+		<!-- 
+		Cool split-screen layout with a title and an image.
+		 -->
+		<div class="title-section">
+			<div class="title">
+				<h1 class="newsreader-font">Alec Jensen</h1>
+				<h2 class="newsreader-font">Photographer</h2>
+			</div>
+			<img src="/photos/_MG_0014-Enhanced-NR.jpg" />
+		</div>
+		<div class="second-section newsreader-font">
+			<img src="/photos/DJI_0190.jpg" />
+			<div class="text">
+				<p>
+					Filler text here
+				</p>
+			</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding: unset;
+		margin: unset;
+		width: 100%;
+	}
+
+	.title-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 25em;
+		width: 100%;
+	}
+
+	.title-section .title {
+		margin-right: 1em;
+		background-color: var(--maize);
+		height: 100%;
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: var(--black);
+		margin: unset;
+	}
+
+	.title-section .title h1 {
+		font-size: 6em;
+		margin: unset;
+		padding: unset;
+		color: var(--black);
+	}
+
+	.title-section .title h2 {
+		font-size: 2em;
+		margin: unset;
+		padding: unset;
+		color: var(--black);
+		margin-top: -0.5em;
+	}
+
+	.title-section img {
+		width: 60%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.second-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 25em;
+		width: 100%;
+	}
+
+	.second-section .text {
+		margin-right: 1em;
+		background-color: var(--cerise);
+		height: 100%;
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: var(--black);
+		margin: unset;
+	}
+
+	.second-section .text p {
+		font-size: 1.5em;
+		margin: unset;
+		padding: unset;
+		color: var(--black);
+	}
+
+	.second-section img {
+		width: 60%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
