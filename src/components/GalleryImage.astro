@@ -20,10 +20,7 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
   />
   <div class="modal" id={`modal-${src}`}>
     <div class="modal-content">
-      <div class="modal-header">
-        <!-- <p class="caption">{alt}</p> -->
-        <span class="close" id={`close-${src}`}> &times; </span>
-      </div>
+      <span class="close" id={`close-${src}`}> &times; </span>
       <img src={src} alt={alt} />
     </div>
   </div>
@@ -34,8 +31,10 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
     const image = document.getElementById(`image-${src}`);
     const modal = document.getElementById(`modal-${src}`);
     const close = document.getElementById(`close-${src}`);
+    let scrollPosition = 0;
 
     const openModal = () => {
+      scrollPosition = window.scrollY;
       modal.style.display = "flex";
       window.location.hash = src;
     };
@@ -43,6 +42,7 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
     const closeModal = () => {
       modal.style.display = "none";
       window.location.hash = "";
+      window.scrollTo(0, scrollPosition);
     };
 
     if (window.location.hash === `#${src}`) {
@@ -75,7 +75,7 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
     left: 0;
     top: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -85,37 +85,33 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
 
   .modal-content {
     max-height: 80vh;
+    position: relative;
   }
 
   .modal-content img {
     max-height: 75vh;
   }
 
-  .modal-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--ivory);
-    color: var(--black);
-    font-size: 1.4em;
-    position: relative;
-    height: 3em;
-  }
-
   .close {
     position: absolute;
-    right: 20px;
-    color: var(--black);
+    top: -1.25em;
+    right: -0.75em;
+    color: var(--ivory);
     font-size: 2em;
     font-weight: bold;
     cursor: pointer;
   }
 
-  .caption {
-    text-align: center;
-    background-color: var(--ivory);
-    color: var(--black);
-    font-size: 1.4em;
-    margin: 0.2em;
+  @media (max-width: 720px) {
+    .modal-content img {
+      max-width: 95vw;
+      width: auto;
+    }
+
+    .close {
+      top: unset;
+      bottom: -1em;
+      right: 0;
+    }
   }
 </style>

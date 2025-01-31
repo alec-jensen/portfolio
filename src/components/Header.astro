@@ -13,6 +13,16 @@ import { SITE_TITLE } from "../consts";
       <HeaderLink href="/contact">Contact</HeaderLink>
       <!-- <HeaderLink href="/blog">Blog</HeaderLink> -->
     </div>
+    <div class="mobile-links" id="mobile-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/gallery">Gallery</HeaderLink>
+      <HeaderLink href="/contact">Contact</HeaderLink>
+      <!-- <HeaderLink href="/blog">Blog</HeaderLink> -->
+    </div>
+    <a href="javascript:void(0);" class="icon" id="hamburger">
+      <i class="fa fa-bars"></i>
+    </a>
     <div class="social-links">
       <a href="https://www.instagram.com/alec.j.is.a.nerd" target="_blank">
         <span class="sr-only">Follow Alec Jensen on Instagram</span>
@@ -30,13 +40,42 @@ import { SITE_TITLE } from "../consts";
       </a>
       <a href="https://www.youtube.com/@alec.j" target="_blank">
         <span class="sr-only">Subscribe to Alec Jensen on YouTube</span>
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,14.598V9.402c0-0.385,0.417-0.625,0.75-0.433l4.5,2.598c0.333,0.192,0.333,0.674,0,0.866l-4.5,2.598 C10.417,15.224,10,14.983,10,14.598z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,14.598V9.402c0-0.385,0.417-0.625,0.75-0.433l4.5,2.598c0.333,0.192,0.333,0.674,0,0.866l-4.5,2.598 C10.417,15.224,10,14.983,10,14.598z"
+          ></path>
         </svg>
       </a>
     </div>
   </nav>
 </header>
+
+<script>
+  import { navigate } from "astro:transitions/client";
+
+  document.addEventListener("astro:page-load", () => {
+    function hamburger() {
+      var x = document.getElementById("mobile-links");
+
+      if (x.style.display == "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+    }
+
+    document.getElementById("hamburger")?.addEventListener("click", hamburger);
+  });
+</script>
+
 <style>
   header {
     margin: 0;
@@ -65,7 +104,7 @@ import { SITE_TITLE } from "../consts";
   }
   nav a {
     padding: 1em 0.5em;
-    color: var(--text-color);
+    color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
@@ -89,9 +128,46 @@ import { SITE_TITLE } from "../consts";
   .social-links a {
     display: flex;
   }
+
+  .mobile-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    display: none;
+    cursor: pointer;
+  }
+
   @media (max-width: 720px) {
     .social-links {
       display: none;
+    }
+
+    .internal-links {
+      display: none;
+    }
+
+    .icon {
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin: 0 1em;
+      color: var(--black);
+      border-width: 0;
+      border-style: none;
+    }
+
+    .icon i {
+      font-size: 1.5em;
     }
   }
 </style>

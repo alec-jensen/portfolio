@@ -101,8 +101,8 @@ if (Astro.request.method === "POST") {
             required></textarea>
           {errors.message && <p class="error">{errors.message}</p>}
         </div>
+        {success && <p id="message-sent">Message sent!</p>}
         <button type="submit">Send</button>
-        {success && <p>Message sent!</p>}
       </form>
     </section>
     <section>
@@ -205,5 +205,23 @@ if (Astro.request.method === "POST") {
   .error {
     color: var(--red);
     font-size: 0.8em;
+  }
+
+  #message-sent {
+    margin: -0.5em 0;
+  }
+
+  @media (max-width: 720px) {
+    .info {
+      flex-direction: column;
+    }
+
+    .info-item {
+      flex: unset;
+    }
+
+    button {
+      width: unset;
+    }
   }
 </style>
