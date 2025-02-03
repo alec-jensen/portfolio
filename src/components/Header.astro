@@ -113,11 +113,17 @@ import { SITE_TITLE } from "../consts";
     color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;
+    transition: all 0.2s;
   }
   nav a.active {
     text-decoration: none;
     border-bottom-color: var(--accent);
   }
+
+  nav a:hover {
+    color: var(--cerise);
+  }
+
   .title {
     margin-left: 1em;
   }
