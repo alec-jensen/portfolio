@@ -85,9 +85,10 @@ import { SITE_TITLE } from "../consts";
 <style>
   header {
     margin: 0;
-    padding: 0 1em;
-    margin-bottom: 2em;
+    padding: 0 var(--space-md);
+    margin-bottom: var(--space-xl);
   }
+  
   h2 {
     margin: 0;
     font-size: 1em;
@@ -97,6 +98,7 @@ import { SITE_TITLE } from "../consts";
   h2 a.active {
     text-decoration: none;
   }
+  
   nav {
     display: flex;
     align-items: center;
@@ -106,36 +108,41 @@ import { SITE_TITLE } from "../consts";
     z-index: 1000;
     top: 0;
     left: 0;
-    background: var(--ivory);
+    background: var(--background);
   }
+  
   nav a {
-    padding: 1em 0.5em;
-    color: var(--black);
+    padding: var(--space-md) var(--space-sm);
+    color: var(--text);
     border-bottom: 4px solid transparent;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all var(--transition-fast);
   }
+  
   nav a.active {
     text-decoration: none;
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--primary);
   }
 
   nav a:hover {
-    color: var(--cerise);
+    color: var(--primary);
   }
 
   .title {
-    margin-left: 1em;
+    margin-left: var(--space-md);
   }
+  
   .internal-links {
     display: flex;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
+  
   .social-links {
-    margin-right: 1em;
+    margin-right: var(--space-md);
   }
+  
   .social-links,
   .social-links a {
     display: flex;
@@ -147,7 +154,7 @@ import { SITE_TITLE } from "../consts";
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--ivory);
+    background: var(--background);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -172,8 +179,8 @@ import { SITE_TITLE } from "../consts";
       cursor: pointer;
       display: flex;
       align-items: center;
-      margin: 0 1em;
-      color: var(--black);
+      margin: 0 var(--space-md);
+      color: var(--text);
       border-width: 0;
       border-style: none;
     }

@@ -29,26 +29,29 @@ const today = new Date();
 </footer>
 <style>
   footer {
-    padding: 4em 1em 4em 1em;
-    background: var(--ivory);
-    color: var(--black);
+    padding: var(--space-xxl) var(--space-md);
+    background: var(--background);
+    color: var(--text);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  
   .social-links {
     display: flex;
     justify-content: center;
-    gap: 1em;
-    margin-top: 1em;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
   }
+  
   .social-links a {
     text-decoration: none;
-    color: var(--black);
-    transition: all 0.2s;
+    color: var(--text);
+    transition: color var(--transition-fast);
   }
+  
   .social-links a:hover {
-    color: var(--cerise);
+    color: var(--primary);
   }
 </style>

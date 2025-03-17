@@ -6,16 +6,35 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <h1>About Me</h1>
     <p>
-      Photography is my way of capturing the beauty, emotion, and fleeting
-      moments of the world around us. I started with a simple camera and a
-      curiosity for the stories a single frame can tell. Over time, this
-      curiosity turned into a passion, driving me to explore different styles
-      and techniques to refine my craft.
+      Based in the Dallas-Fort Worth area, I'm a passionate photographer dedicated to capturing 
+      extraordinary moments through my lens. Photography is my way of preserving beauty, emotion, 
+      and fleeting moments that tell unique stories.
     </p>
 
+    <h2>My Services</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Sports Photography</h3>
+        <p>Capturing the intensity and emotion of athletic moments, from touchdowns to game-winning shots.</p>
+      </div>
+      <div class="service">
+        <h3>Event Photography</h3>
+        <p>Documenting special occasions, corporate events, and celebrations with attention to detail.</p>
+      </div>
+      <div class="service">
+        <h3>Portrait Photography</h3>
+        <p>Creating stunning portraits that showcase personality, whether individual, family, or professional.</p>
+      </div>
+      <div class="service">
+        <h3>Landscape Photography</h3>
+        <p>Capturing breathtaking natural and urban landscapes with dramatic lighting and composition.</p>
+      </div>
+    </div>
+
+    <h2>My Approach</h2>
     <p>
       From dynamic landscapes to detailed portraits, I aim to create images that
-      evoke emotion and tell a story. Whether it’s finding the perfect light,
+      evoke emotion and tell a story. Whether it's finding the perfect light,
       experimenting with creative angles, or editing to enhance the final
       composition, I love every part of the process.
     </p>
@@ -25,22 +44,93 @@ import Layout from "../layouts/Layout.astro";
       and places in a meaningful way. Every photo I take is a reflection of my
       perspective and a moment I want to preserve and share.
     </p>
+
+    <div class="cta-container">
+      <a href="/contact" class="cta-button">Ready to book? Contact me today!</a>
+      <a href="/gallery" class="cta-button secondary">View my portfolio</a>
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-	padding: 1em;
-	margin: 0 auto;
-	max-width: 720px;
+    padding: var(--space-md);
+    margin: 0 auto;
+    max-width: 720px;
   }
 
   h1 {
-	font-size: 2em;
-	margin-bottom: 1em;
+    font-size: 2em;
+    margin-bottom: var(--space-sm);
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: var(--space-lg) 0 var(--space-sm) 0;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    color: var(--primary);
+    margin-bottom: var(--space-sm);
   }
 
   p {
-	margin-bottom: 1em;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+  }
+
+  .service {
+    padding: var(--space-md);
+    border-left: 3px solid var(--primary);
+  }
+
+  .cta-container {
+    margin-top: var(--space-xl);
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta-button {
+    padding: var(--space-sm) var(--space-lg);
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    text-align: center;
+  }
+
+  .cta-button:hover {
+    background-color: var(--secondary);
+  }
+
+  .cta-button.secondary {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--gray-light);
+  }
+
+  .cta-button.secondary:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  @media (max-width: 720px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-container {
+      flex-direction: column;
+    }
   }
 </style>

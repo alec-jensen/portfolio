@@ -66,7 +66,9 @@ if (Astro.request.method === "POST") {
 <Layout page_title="Contact">
   <main>
     <h1>Contact</h1>
+    <p class="intro">Ready to book a photography session in the DFW area? I'd love to hear from you about your photography needs!</p>
     <section>
+      <h2>Book a Session</h2>
       <form method="POST">
         <div class="info">
           <div class="info-item">
@@ -106,6 +108,14 @@ if (Astro.request.method === "POST") {
       </form>
     </section>
     <section>
+      <h2>Serving the Dallas-Fort Worth Area</h2>
+      <p>
+        Based in DFW, I provide photography services throughout the metroplex and surrounding areas. 
+        Whether you need sports, event, portrait, or landscape photography, I'm here to help create 
+        stunning images for you.
+      </p>
+    </section>
+    <section>
       <h2>Email</h2>
       <p>
         You can reach me at: <a href="mailto:alec@alecj.tk">alec@alecj.tk</a>
@@ -125,44 +135,44 @@ if (Astro.request.method === "POST") {
 
 <style>
   main {
-    padding: 1em;
+    padding: var(--space-md);
     margin: 0 auto;
     max-width: 720px;
   }
 
   h1 {
     font-size: 2em;
-    margin-bottom: 1em;
+    margin-bottom: var(--space-md);
   }
 
   p {
-    margin-bottom: 1em;
+    margin-bottom: var(--space-md);
   }
 
   section {
-    margin-bottom: 2em;
+    margin-bottom: var(--space-xl);
   }
 
   h2 {
     font-size: 1.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: var(--space-sm);
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--space-md);
   }
 
   label {
     font-weight: bold;
-    margin-bottom: 0.5em;
+    margin-bottom: var(--space-sm);
   }
 
   input,
   textarea {
-    padding: 0.5em 0.5em;
-    border: 1px solid rgb(var(--gray-light));
+    padding: var(--space-sm);
+    border: 1px solid rgba(var(--gray-light), 1);
     font-size: 1em;
     width: 100%;
     box-sizing: border-box;
@@ -171,7 +181,7 @@ if (Astro.request.method === "POST") {
 
   .info {
     display: flex;
-    gap: 1em;
+    gap: var(--space-md);
     width: 100%;
   }
 
@@ -187,28 +197,32 @@ if (Astro.request.method === "POST") {
   }
 
   button {
-    font-family: "Newsreader", sans-serif;
-    padding: 0.75em;
-    width: 100%;
-    background-color: var(--cerise);
+    padding: var(--space-sm) var(--space-lg);
+    background-color: var(--primary);
     color: white;
     border: none;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-normal);
   }
 
   button:hover {
-    background-color: var(--pumpkin);
+    background-color: var(--secondary);
   }
 
   .error {
-    color: var(--red);
+    color: var(--error);
     font-size: 0.8em;
   }
 
   #message-sent {
-    margin: -0.5em 0;
+    margin: calc(-1 * var(--space-sm)) 0;
+  }
+
+  .intro {
+    font-size: 1.2em;
+    margin-bottom: var(--space-xl);
+    color: var(--text);
   }
 
   @media (max-width: 720px) {

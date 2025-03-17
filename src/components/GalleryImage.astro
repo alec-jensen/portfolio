@@ -1,22 +1,26 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   src: string;
   alt: string;
-  width?: number | null;
-  height?: number | null;
+  width: number;
+  height: number;
 }
 
-let { src, alt, width = null, height = null }: Props = Astro.props;
+let { src, alt, width, height }: Props = Astro.props;
 ---
 
 <div>
-  <img
-    class="base-image"
+  <Image
     src={src}
     alt={alt}
     width={width}
     height={height}
+    loading="eager"
     id={`image-${src}`}
+    class="base-image"
+    onload="this.classList.add('loaded')"
   />
   <div class="modal" id={`modal-${src}`}>
     <div class="modal-content">
@@ -67,6 +71,7 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
     height: auto;
     object-fit: cover;
   }
+  
   .modal {
     display: none;
     justify-content: center;
@@ -96,10 +101,15 @@ let { src, alt, width = null, height = null }: Props = Astro.props;
     position: absolute;
     top: -1.25em;
     right: -0.75em;
-    color: var(--ivory);
+    color: var(--background);
     font-size: 2em;
     font-weight: bold;
     cursor: pointer;
+    transition: color var(--transition-fast);
+  }
+  
+  .close:hover {
+    color: var(--primary);
   }
 
   @media (max-width: 720px) {
