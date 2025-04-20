@@ -15,15 +15,26 @@ export const prerender = true;
   <body>
     <Header />
     <main>
-      <Image
-        src="/photos/DJI_0190.jpg"
-        alt="Aerial view of a lake"
-        width={1920}
-        height={1080}
-        loading="eager"
-        class="background"
-        onload="this.classList.add('loaded')"
-      />
+      <div class="background-container">
+        <Image
+          src="/bg_optim.webp"
+          alt="Blurred background placeholder"
+          width={320}
+          height={240}
+          quality={10}
+          loading="eager"
+          class="background background-placeholder"
+        />
+        <Image
+          src="/bg.webp"
+          alt="Aerial view of a lake"
+          width={3200}
+          height={2400}
+          loading="eager"
+          class="background background-main"
+          onload="this.parentElement.classList.add('loaded')" 
+        />
+      </div>
       <div class="content">
         <h1>Alec Jensen</h1>
         <h2>Photographer based in DFW</h2>
@@ -57,24 +68,44 @@ export const prerender = true;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better text visibility */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
 
-  .background {
+  .background-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
     z-index: -1;
-    filter: blur(20px);
-    transition: filter var(--transition-slow);
+    overflow: hidden;
   }
-  
-  .background.loaded {
-    filter: blur(0);
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .background-placeholder {
+    filter: blur(20px);
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 1;
+  }
+
+  .background-main {
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    z-index: 2;
+  }
+
+  .background-container.loaded .background-main {
+    opacity: 1;
   }
 
   .content {
@@ -82,10 +113,6 @@ export const prerender = true;
     z-index: 1;
     padding: var(--space-xl);
     color: #fff;
-  }
-
-  .content {
-    position: relative;
     text-align: center;
     z-index: 2;
   }
