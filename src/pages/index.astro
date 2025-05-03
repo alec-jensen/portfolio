@@ -36,12 +36,13 @@ export const prerender = true;
         />
       </div>
       <div class="content">
-        <h1>Alec Jensen</h1>
-        <h2>Photographer based in DFW</h2>
-        <p class="services">Specializing in Sports, Events, Portraits, and more</p>
+        <h1>Alec Jensen Photography</h1>
+        <h2>Capturing Your Unforgettable Moments in DFW</h2>
+        <p class="services">Your expert photographer for vibrant Sports action, memorable Events, stunning Portraits, and more.</p>
         <div class="cta-buttons">
-          <a href="/contact" class="cta-button">Get in Touch</a>
-          <a href="/gallery" class="cta-button secondary">View Portfolio</a>
+          <a href="/contact" class="cta-button">Book Your Session</a>
+          <a href="/pricing" class="cta-button secondary">View Pricing & Packages</a>
+          <a href="/gallery" class="cta-button secondary">Explore Portfolio</a>
         </div>
       </div>
     </main>
@@ -94,18 +95,25 @@ export const prerender = true;
   .background-placeholder {
     filter: blur(20px);
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.05);
     z-index: 1;
+    transition: all 1s ease-in-out;
   }
 
   .background-main {
     opacity: 0;
-    transition: opacity var(--transition-slow);
+    transition: all 1s ease-in-out;
     z-index: 2;
+    transform: scale(1.05);
   }
 
   .background-container.loaded .background-main {
     opacity: 1;
+    transform: scale(1);
+  }
+
+  .background-container.loaded .background-placeholder {
+    transform: scale(1);
   }
 
   .content {
@@ -138,7 +146,7 @@ export const prerender = true;
   .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     margin-top: var(--space-lg);
   }
 
@@ -181,7 +189,7 @@ export const prerender = true;
     .cta-buttons {
       flex-direction: column;
       gap: var(--space-md);
-      max-width: 60%;
+      max-width: 80%;
       margin-left: auto;
       margin-right: auto;
     }

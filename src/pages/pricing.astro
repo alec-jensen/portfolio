@@ -1,0 +1,207 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout page_title="Pricing & Packages">
+  <main>
+    <h1>Pricing & Packages</h1>
+    <p class="intro">Find the perfect photography package for your needs. All packages include high-resolution edited images & all raw images delivered via an online gallery. Serving the DFW area.</p>
+
+    <section class="pricing-section">
+      <h2>Portrait Sessions</h2>
+      <div class="package-grid">
+        <div class="package">
+          <h3>Standard Portrait Package</h3>
+          <p class="price">$50</p>
+          <ul>
+            <li>1-hour session</li>
+            <li>1 location</li>
+            <li>Online gallery for viewing and downloading</li>
+          </ul>
+          <a href="/contact?package=Standard Portrait" class="cta-button">Book Now</a>
+        </div>
+        <div class="package">
+          <h3>Deluxe Portrait Package</h3>
+          <p class="price">$100</p>
+          <ul>
+            <li>Up to 2-hour session</li>
+            <li>Up to 2 locations (nearby)</li>
+            <li>Online gallery for viewing and downloading</li>
+          </ul>
+          <a href="/contact?package=Deluxe Portrait" class="cta-button">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <h2>Event Photography</h2>
+      <div class="package-grid">
+        <div class="package">
+          <h3>Event Coverage</h3>
+          <p class="price">Starting at $25/hour</p>
+          <ul>
+            <li>Minimum 2 hours booking</li>
+            <li>Coverage of key moments and candid shots</li>
+            <li>Professionally edited images</li>
+            <li>Online gallery for viewing and sharing</li>
+            <li>Perfect for parties, corporate events, gatherings</li>
+          </ul>
+          <a href="/contact?package=Event Coverage" class="cta-button">Request Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <h2>Sports Photography</h2>
+       <div class="package-grid">
+        <div class="package">
+          <h3>Game Day Action</h3>
+          <p class="price">Starting at $100/game</p>
+          <ul>
+            <li>Coverage of a single game/match</li>
+            <li>Action shots and key plays</li>
+            <li>Focus on specific player(s) available</li>
+            <li>Professionally edited images</li>
+            <li>Online gallery</li>
+          </ul>
+          <a href="/contact?package=Sports Game Day" class="cta-button">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-quote">
+        <h2>Need Something Different?</h2>
+        <p>Don't see exactly what you're looking for? Contact me for a custom quote tailored to your specific photography needs.</p>
+        <a href="/contact" class="cta-button">Get a Custom Quote</a>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding: var(--space-lg) var(--space-md);
+    margin: 0 auto;
+    max-width: 768px;
+  }
+
+  h1 {
+    font-size: 2.8em;
+    margin-bottom: var(--space-md);
+    text-align: left;
+    color: var(--text);
+  }
+
+  .intro {
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: var(--space-xxl);
+    color: var(--text-light);
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-section {
+    margin-bottom: var(--space-xxl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid rgba(var(--gray-light), 0.5);
+  }
+
+  .pricing-section:last-of-type {
+      border-bottom: none;
+  }
+
+  h2 {
+    font-size: 2.2em;
+    color: var(--text);
+    margin-bottom: var(--space-xl);
+  }
+
+  .package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .package {
+    border: 1px solid rgba(var(--gray-light), 1);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    transition: border-color var(--transition-normal);
+  }
+
+  .package:hover {
+      border-color: var(--primary);
+  }
+
+  .package h3 {
+    font-size: 1.6em;
+    margin-bottom: var(--space-sm);
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .package .price {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary);
+    padding: 0;
+  }
+
+  .package ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+    color: var(--text-light);
+  }
+
+  .package li {
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    padding-left: var(--space-lg); /* Add padding to make space for the checkmark */
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+  }
+
+  .package li::before {
+    content: '✓'; /* Unicode checkmark character */
+    position: absolute;
+    left: 0;
+    top: 0; /* Adjust as needed for vertical alignment */
+    color: var(--primary); /* Use primary color for the checkmark */
+    font-weight: bold; /* Make checkmark bolder */
+    font-size: 1.1em; /* Slightly larger checkmark */
+  }
+
+  .cta-button {
+      margin-top: auto;
+      font-weight: 500;
+  }
+
+  .custom-quote {
+      padding: var(--space-xl); /* Match package padding */
+      background-color: transparent;
+      border: 1px dashed rgba(var(--gray-light), 1);
+      border-radius: var(--radius-md);
+      margin-top: var(--space-xl);
+  }
+
+  .custom-quote h2 {
+      color: var(--primary);
+      font-size: 2em;
+  }
+
+  .custom-quote p {
+      margin-bottom: var(--space-lg);
+      font-size: 1.1em;
+      color: var(--text-light);
+      max-width: 600px;
+  }
+
+  .custom-quote .cta-button {
+      display: block;
+      width: 100%; /* Explicitly set width to 100% */
+      box-sizing: border-box; /* Include padding in width calculation */
+  }
+</style>

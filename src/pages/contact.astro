@@ -3,6 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import { isEmailValid } from "@hapi/address";
 import nodemailer from "nodemailer";
 
+// Read the package parameter from the URL
+const selectedPackage = Astro.url.searchParams.get("package");
+
+// Set initial message based on the package parameter
+let initialMessage = "";
+if (selectedPackage) {
+  initialMessage = `Hi, I'm interested in the ${selectedPackage} package. Please provide more details or let me know how to book.`;
+}
+
 const errors = {
   name: "",
   email: "",
@@ -65,10 +74,10 @@ if (Astro.request.method === "POST") {
 
 <Layout page_title="Contact">
   <main>
-    <h1>Contact</h1>
-    <p class="intro">Ready to book a photography session in the DFW area? I'd love to hear from you about your photography needs!</p>
+    <h1>Get in Touch</h1>
+    <p class="intro">Ready to capture your moments? Contact me to discuss your photography needs or book a session in the DFW area. Fill out the form below, email, or call!</p>
     <section>
-      <h2>Book a Session</h2>
+      <h2>Send a Message</h2>
       <form method="POST">
         <div class="info">
           <div class="info-item">
@@ -100,7 +109,8 @@ if (Astro.request.method === "POST") {
             id="message"
             name="message"
             placeholder="Your message here"
-            required></textarea>
+            required
+          >{initialMessage}</textarea>
           {errors.message && <p class="error">{errors.message}</p>}
         </div>
         {success && <p id="message-sent">Message sent!</p>}
@@ -108,25 +118,20 @@ if (Astro.request.method === "POST") {
       </form>
     </section>
     <section>
-      <h2>Serving the Dallas-Fort Worth Area</h2>
+      <h2>Contact Information</h2>
       <p>
-        Based in DFW, I provide photography services throughout the metroplex and surrounding areas. 
-        Whether you need sports, event, portrait, or landscape photography, I'm here to help create 
-        stunning images for you.
+        Serving the Dallas-Fort Worth metroplex and surrounding areas.
       </p>
-    </section>
-    <section>
-      <h2>Email</h2>
       <p>
-        You can reach me at: <a href="mailto:alec@alecj.tk">alec@alecj.tk</a>
+        <strong>Email:</strong> <a href="mailto:alec@alecj.tk">alec@alecj.tk</a>
       </p>
-    </section>
-    <section>
-      <h2>Instagram</h2>
       <p>
-        Follow me on Instagram: <a
-          href="https://www.instagram.com/alec.j.is.a.nerd/"
-          target="_blank">@alec.j.is.a.nerd</a
+        <strong>Phone:</strong> <a href="tel:8173309645">(817) 330-9645</a>
+      </p>
+      <p>
+        <strong>Instagram:</strong> <a
+          href="https://www.instagram.com/alec.j.photography/"
+          target="_blank">@alec.j.photography</a
         >
       </p>
     </section>
@@ -137,7 +142,7 @@ if (Astro.request.method === "POST") {
   main {
     padding: var(--space-md);
     margin: 0 auto;
-    max-width: 720px;
+    max-width: 768px;
   }
 
   h1 {
@@ -223,6 +228,15 @@ if (Astro.request.method === "POST") {
     font-size: 1.2em;
     margin-bottom: var(--space-xl);
     color: var(--text);
+  }
+
+  section h2 {
+    font-size: 1.5em;
+    margin-bottom: var(--space-sm);
+  }
+
+  section p strong {
+    font-weight: bold;
   }
 
   @media (max-width: 720px) {

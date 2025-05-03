@@ -150,6 +150,7 @@ button, .button, .cta-button {
 
 button:hover, .button:hover, .cta-button:hover {
 	background-color: var(--secondary);
+    color: white; /* Ensure text stays white on hover */
 }
 
 .button.secondary, .cta-button.secondary {
