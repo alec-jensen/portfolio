@@ -44,6 +44,9 @@
 
 	<footer>
 		<p>&copy; Alec Jensen 2023-{new Date().getFullYear()}</p>
+		<div class="footer-links">
+			<a href="/terms">Terms of Service</a> • <a href="/privacy">Privacy Policy</a> • <a href="/security">Security Policy</a> • <a href="/acknowledgements">Acknowledgements</a>
+		</div>
 	</footer>
 </div>
 
@@ -77,6 +80,12 @@
 
 	footer p {
 		font-family: var(--font-mono);
+	}
+
+	.footer-links {
+		font-size: 0.9em;
+		text-align: center;
+		color: lightgray;
 	}
 
 	@media (min-width: 480px) {

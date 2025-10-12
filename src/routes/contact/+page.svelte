@@ -286,6 +286,10 @@
 		align-items: center;
 	}
 
+    h1 {
+        margin-top: 2em;
+    }
+
 	.text-column svg {
 		fill: white;
 		margin-right: 0.5em;
