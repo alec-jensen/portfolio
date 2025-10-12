@@ -136,6 +136,7 @@
 			href="0535c880f853d53e9043ffe3248cc5eec420f81d6c7128c8e58043eb64c538621f"
 			class="link"
 			target="_blank"
+			rel="external"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 192 192"
 				><path d="M0 0h192v192H0z" style="fill:none" /><path

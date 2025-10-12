@@ -8,8 +8,9 @@
 		'backend developer',
 		'frontend developer',
 		'ml/dl developer',
-		'game developer',
 		'violist',
+		'robotics enthusiast',
+		'autonomous systems developer'
 	];
 
 	let description = descriptions[Math.floor(Math.random() * descriptions.length)];
