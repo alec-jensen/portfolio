@@ -1,3 +1,34 @@
+<script>
+	let copiedSession = false;
+	let copiedBriar = false;
+
+	function handleCopy(text, type) {
+		// Prevent build-time errors in environments without clipboard
+		const doCopy = () => navigator.clipboard?.writeText(text)
+			.catch(() => {
+				// Fallback copy for older browsers
+				const ta = document.createElement('textarea');
+				ta.value = text;
+				ta.style.position = 'fixed';
+				ta.style.opacity = '0';
+				document.body.appendChild(ta);
+				ta.focus();
+				ta.select();
+				try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
+			});
+
+		Promise.resolve(doCopy()).then(() => {
+			if (type === 'session') {
+				copiedSession = true;
+				setTimeout(() => (copiedSession = false), 1500);
+			} else if (type === 'briar') {
+				copiedBriar = true;
+				setTimeout(() => (copiedBriar = false), 1500);
+			}
+		});
+	}
+</script>
+
 <svelte:head>
 	<title>Contact</title>
 	<meta name="description" content="Contact Alec Jensen" />
@@ -133,10 +164,13 @@
 			<p>Signal</p>
 		</a>
 		<a
-			href="0535c880f853d53e9043ffe3248cc5eec420f81d6c7128c8e58043eb64c538621f"
+			href="#"
 			class="link"
-			target="_blank"
-			rel="external"
+			on:click|preventDefault={() =>
+				handleCopy('0535c880f853d53e9043ffe3248cc5eec420f81d6c7128c8e58043eb64c538621f', 'session')}
+			aria-label="Copy Session ID"
+			role="button"
+			title="Click to copy — paste in Session"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 192 192"
 				><path d="M0 0h192v192H0z" style="fill:none" /><path
@@ -147,12 +181,16 @@
 					style="stroke:#fff;stroke-width:12px;stroke-miterlimit:10;fill:none"
 				/></svg
 			>
-			<p>Session</p>
+			<p>{copiedSession ? 'Copied!' : 'Session'}</p>
 		</a>
 		<a
-			href="briar://abnwdhm24p6effiprjao44lnvqiik5ra4ygwqje2lk3xllgrxfgbe"
+			href="#"
 			class="link"
-			target="_blank"
+			on:click|preventDefault={() =>
+				handleCopy('briar://abnwdhm24p6effiprjao44lnvqiik5ra4ygwqje2lk3xllgrxfgbe', 'briar')}
+			aria-label="Copy Briar address"
+			role="button"
+			title="Click to copy — paste in Briar"
 		>
 			<svg
 				width="50"
@@ -235,9 +273,10 @@
 					d="m217.3 47.2c9.7 0 17.7 7.9 17.7 17.7v8.3c0 9.7-8 17.7-17.7 17.7h-199.6c-9.7 0-17.7-7.9-17.7-17.7v-8.3c0-9.7 7.9-17.7 17.7-17.7h199.6m0-7h-199.6c-13.6 0-24.7 11-24.7 24.6v8.3c0 13.6 11.1 24.7 24.7 24.7h199.7c13.6 0 24.7-11.1 24.7-24.7v-8.3c-0.1-13.6-11.2-24.6-24.8-24.6z"
 				/></svg
 			>
-			<p>Briar</p>
+			<p>{copiedBriar ? 'Copied!' : 'Briar'}</p>
 		</a>
 	</div>
+	<p class="copy-note">Note: Session and Briar don’t open chats from links. Click to copy and paste in the app.</p>
 </div>
 
 <style>
@@ -261,6 +300,13 @@
 		width: 370px;
 	}
 
+	.copy-note {
+		font-size: 0.95em;
+		color: #ccc;
+		margin-top: -0.5em;
+		margin-bottom: 0.5em;
+	}
+
 	.link {
 		display: flex;
 		align-items: center;
@@ -277,5 +323,11 @@
 		padding: 0 1em;
 		margin: 0.5em;
 		width: 75%;
+			cursor: pointer;
+	}
+
+	a:focus-visible {
+		outline: 2px solid var(--color-theme-1, #888);
+		outline-offset: 2px;
 	}
 </style>
