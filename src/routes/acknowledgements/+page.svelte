@@ -43,7 +43,7 @@
             We formally recognize and thank the security researchers who responsibly disclose vulnerabilities in accordance with our policy. These contributions are vital to maintaining the integrity of Alec Jensen Development's services.
         </p>
         <p>
-            For information on our disclosure process and safe harbor guidelines, please consult the <a href="/security-policy">Alec Jensen Development Security Policy</a>.
+            For information on our disclosure process and safe harbor guidelines, please consult the <a href="/security">Alec Jensen Development Security Policy</a>.
         </p>
         
         <p class="last-updated">Last updated: October 12, 2025</p>
