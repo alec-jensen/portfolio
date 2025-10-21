@@ -2,7 +2,7 @@
 	import Header from './Header.svelte';
 	import './styles.css';
 	import { onNavigate } from '$app/navigation';
-    import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -14,23 +14,22 @@
 			});
 		});
 	});
-	
 
-    function handleKeydown(event) {
-        if (event.shiftKey || event.ctrlKey || event.altKey || event.metaKey) {
-            return;
-        }
+	function handleKeydown(event) {
+		if (event.shiftKey || event.ctrlKey || event.altKey || event.metaKey) {
+			return;
+		}
 
-        if (event.key === 'h') {
-            goto('/');
-        } else if (event.key === 'a') {
-            goto('/about');
-        } else if (event.key === 'p') {
-            goto('/projects');
-        } else if (event.key === 'c') {
-            goto('/contact');
-        }
-    }
+		if (event.key === 'h') {
+			goto('/');
+		} else if (event.key === 'a') {
+			goto('/about');
+		} else if (event.key === 'p') {
+			goto('/projects');
+		} else if (event.key === 'c') {
+			goto('/contact');
+		}
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -45,7 +44,8 @@
 	<footer>
 		<p>&copy; Alec Jensen 2023-{new Date().getFullYear()}</p>
 		<div class="footer-links">
-			<a href="/terms">Terms of Service</a> • <a href="/privacy">Privacy Policy</a> • <a href="/security">Security Policy</a> • <a href="/acknowledgements">Acknowledgements</a>
+			<a href="/terms">Terms</a> • <a href="/privacy">Privacy</a> • <a href="/security">Security</a>
+			• <a href="/legal">Legal</a>
 		</div>
 	</footer>
 </div>

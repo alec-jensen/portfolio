@@ -1,0 +1,23 @@
+Do Not Track Policy
+
+Last updated: 2025-10-20
+
+Scope
+This policy applies to web properties served from this domain.
+
+Respect for Do Not Track and GPC
+- We treat a browser’s Do Not Track (DNT) setting as a signal of a user preference not to be tracked across sites.
+- We also honor Global Privacy Control (GPC) signals.
+
+What “honor” means here
+- We do not set or use third‑party tracking cookies.
+- We do not sell or share personal information for cross‑context behavioral advertising.
+- Our analytics are strictly cookieless and pseudonymous, used only in aggregate to understand traffic and performance.
+- We do not fingerprint users for advertising or cross‑site tracking.
+
+Scope limitations
+- Necessary security telemetry (e.g., WAF, firewall, abuse prevention) may still be processed to protect the service.
+- First‑party functional storage may be used to deliver requested features, but not for cross‑site tracking.
+
+Contact
+If you have questions about this policy, contact: privacy@alecjensen.com

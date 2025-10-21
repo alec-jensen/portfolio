@@ -4,8 +4,8 @@
 
 	function handleCopy(text, type) {
 		// Prevent build-time errors in environments without clipboard
-		const doCopy = () => navigator.clipboard?.writeText(text)
-			.catch(() => {
+		const doCopy = () =>
+			navigator.clipboard?.writeText(text).catch(() => {
 				// Fallback copy for older browsers
 				const ta = document.createElement('textarea');
 				ta.value = text;
@@ -14,7 +14,11 @@
 				document.body.appendChild(ta);
 				ta.focus();
 				ta.select();
-				try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
+				try {
+					document.execCommand('copy');
+				} finally {
+					document.body.removeChild(ta);
+				}
 			});
 
 		Promise.resolve(doCopy()).then(() => {
@@ -122,7 +126,12 @@
 			class="link"
 			target="_blank"
 		>
-			<svg fill="none" height="50" viewBox="0 0 160 160" width="50" xmlns="http://www.w3.org/2000/svg"
+			<svg
+				fill="none"
+				height="50"
+				viewBox="0 0 160 160"
+				width="50"
+				xmlns="http://www.w3.org/2000/svg"
 				><g
 					><path
 						d="m80 0c4.1505 0 8.2271.31607 12.2072.925452l-1.1444 7.413248c-3.6069-.55226-7.3014-.8387-11.0628-.8387-3.7612 0-7.4555.28641-11.0623.83862l-1.1444-7.413245c3.9799-.609332 8.0564-.925375 12.2067-.925375z"
@@ -276,7 +285,9 @@
 			<p>{copiedBriar ? 'Copied!' : 'Briar'}</p>
 		</a>
 	</div>
-	<p class="copy-note">Note: Session and Briar don’t open chats from links. Click to copy and paste in the app.</p>
+	<p class="copy-note">
+		Note: Session and Briar don’t open chats from links. Click to copy and paste in the app.
+	</p>
 </div>
 
 <style>
@@ -286,9 +297,9 @@
 		align-items: center;
 	}
 
-    h1 {
-        margin-top: 2em;
-    }
+	h1 {
+		margin-top: 2em;
+	}
 
 	.text-column svg {
 		fill: white;
@@ -327,7 +338,7 @@
 		padding: 0 1em;
 		margin: 0.5em;
 		width: 75%;
-			cursor: pointer;
+		cursor: pointer;
 	}
 
 	a:focus-visible {

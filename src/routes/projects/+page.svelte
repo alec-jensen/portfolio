@@ -46,9 +46,9 @@
 			<div class="project_card__header">
 				<h2>firescript</h2>
 				<p>
-					firescript is a work in progress programming language that can be compiled natively or to JavaScript,
-					designed for use in the web. It is strongly & statically typed, and the major philosophy
-					is "simplicity through explicit design".
+					firescript is a work in progress programming language that can be compiled natively or to
+					JavaScript, designed for use in the web. It is strongly & statically typed, and the major
+					philosophy is "simplicity through explicit design".
 				</p>
 
 				<div class="project_card__links">
@@ -63,7 +63,8 @@
 			<div class="project_card__header">
 				<h2>NoteAI</h2>
 				<p>
-					NoteAI is a tool designed to help students enforce what they have already learned, improving grades and helping them to learn more effectively.
+					NoteAI is a tool designed to help students enforce what they have already learned,
+					improving grades and helping them to learn more effectively.
 				</p>
 
 				<div class="project_card__links">
@@ -78,7 +79,8 @@
 			<div class="project_card__header">
 				<h2>EnhancedInput</h2>
 				<p>
-					EnhancedInput is a python library designed to make it easier to get input from the user, and to validate that input.
+					EnhancedInput is a python library designed to make it easier to get input from the user,
+					and to validate that input.
 				</p>
 
 				<div class="project_card__links">
@@ -93,7 +95,8 @@
 			<div class="project_card__header">
 				<h2>botnet</h2>
 				<p>
-					Simple botnet with 3 parts: server, client, and a web interface. The server is written in python, the client in Nim, and the web interface using Astro.
+					Simple botnet with 3 parts: server, client, and a web interface. The server is written in
+					python, the client in Nim, and the web interface using Astro.
 				</p>
 
 				<div class="project_card__links">
@@ -107,9 +110,7 @@
 
 			<div class="project_card__header">
 				<h2>webserver</h2>
-				<p>
-					Webserver written in Python with support for writing HTML directly with Python.
-				</p>
+				<p>Webserver written in Python with support for writing HTML directly with Python.</p>
 
 				<div class="project_card__links">
 					<a href="https://github.com/alec-jensen/webserver">GitHub</a>
@@ -167,7 +168,7 @@
 
 	.project_card__header p {
 		margin: 0;
-		color: lightgray
+		color: lightgray;
 	}
 
 	.project_card__links {

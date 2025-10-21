@@ -8,8 +8,8 @@
 
 	<p>
 		I am Alec Jensen, a software developer from the United States. I have been programming since
-		2018, starting with C on an Arduino Uno. I have since learned C++, Python, Java,
-		JavaScript, Svelte/SvelteKit, and Astro.
+		2018, starting with C on an Arduino Uno. I have since learned C++, Python, Java, JavaScript,
+		Svelte/SvelteKit, and Astro.
 	</p>
 
 	<p>
