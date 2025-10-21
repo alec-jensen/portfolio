@@ -45,7 +45,7 @@
 		<p>&copy; Alec Jensen 2023-{new Date().getFullYear()}</p>
 		<div class="footer-links">
 			<a href="/terms">Terms</a> • <a href="/privacy">Privacy</a> • <a href="/security">Security</a>
-			• <a href="/legal">Legal</a>
+			• <a href="/legal">Legal</a> • <a href="status.alecj.com">Status</a>
 		</div>
 	</footer>
 </div>
