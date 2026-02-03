@@ -5,7 +5,7 @@
 	<h2>About our data</h2>
 	<p>
 		We maintain a minimal amount of data. Security telemetry may be processed by our network edge
-		and WAF. Feature data (e.g., messages sent to kidney bot) may be stored in our databases as
+		and WAF. Feature data (e.g., custom kidney bot settings) may be stored in our databases as
 		described in our Privacy Policy.
 	</p>
 
