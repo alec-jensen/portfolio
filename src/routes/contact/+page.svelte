@@ -194,7 +194,7 @@
 		</a>
 	</div>
 	<p class="copy-note">
-		Note: Session and Briar don’t open chats from links. Click to copy and paste in the app.
+		Note: Session doesn't open chats from links. Click to copy and paste in the app.
 	</p>
 </div>
 
