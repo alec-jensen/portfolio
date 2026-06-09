@@ -13,18 +13,20 @@
 <body data-sveltekit-preload-data="hover">
 	<div style="display: contents">%sveltekit.body%</div>
 	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			swetrix.init('IHa10wrTcnYg', {
-				apiURL: 'https://api.analytics.alecj.tk/log',
-			})
-			swetrix.trackViews();
-			swetrix.trackErrors();
+		document.addEventListener('DOMContentLoaded', function() {
+		  swetrix.init('fIgMo1EKZqCg', {
+		    apiURL: 'https://analytics.alecj.tk/backend/v1/log',
+		  })
+		  swetrix.trackViews()
 		})
 	</script>
-
+		
 	<noscript>
-		<img src="https://api.analytics.alecj.tk/log/noscript?pid=IHa10wrTcnYg" alt=""
-			referrerpolicy="no-referrer-when-downgrade" />
+		<img
+		  src="https://analytics.alecj.tk/backend/log/noscript?pid=fIgMo1EKZqCg"
+		  alt=""
+		  referrerpolicy="no-referrer-when-downgrade"
+		/>
 	</noscript>
 </body>
 
