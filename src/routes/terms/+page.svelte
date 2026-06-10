@@ -14,7 +14,7 @@
 			operated by Alec J. (collectively, the "Services"), you agree to be bound by these Terms of
 			Service. The Services include, but are not limited to, those accessible via the domains <em
 				>alecj.com</em
-			>, <em>alecj.tk</em>, and <em>3ln.me</em>. If you do not agree to these Terms, you must not
+			>, <em>alecj.tk</em>, <em>3ln.me</em>, and <em>jensenphoto.net</em>. If you do not agree to these Terms, you must not
 			access or use the Services.
 		</p>
 
