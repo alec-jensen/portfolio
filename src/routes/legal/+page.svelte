@@ -1,6 +1,6 @@
 <section>
 	<h1>Legal and Policies</h1>
-	<p>Find all policy and legal pages in one place.</p>
+	<p>Find all policy and legal pages for alecj.com, alecj.tk, 3ln.me, jensenphoto.net, and all other associated web properties in one place.</p>
 
 	<ul>
 		<li><a href="/terms">Terms of Service</a> • Contract terms for using this site.</li>
