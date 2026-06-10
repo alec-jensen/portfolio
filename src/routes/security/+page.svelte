@@ -22,7 +22,7 @@
 			>
 			if they handle user data, facilitate user interaction, or process financial transactions. This
 			includes, but is not limited to, those hosted under the domains <em>alecj.com</em>,
-			<em>alecj.tk</em>, and <em>3ln.me</em>.
+			<em>alecj.tk</em>, <em>3ln.me</em>, and <em>jensenphoto.net</em>.
 		</p>
 		<p>
 			Any assets not explicitly listed, or that are third-party services integrated but not directly
