@@ -20,7 +20,7 @@
 		</p>
 		<p>
 			This policy applies to all websites, domains, services, and networks operated by Alec J.
-			(collectively, the "Services"), including alecj.com, alecj.tk, and 3ln.me.
+			(collectively, the "Services"), including alecj.com, alecj.tk, 3ln.me, and jensenphoto.net.
 		</p>
 
 		<h2>Controller and contact details</h2>
