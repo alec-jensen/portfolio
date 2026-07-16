@@ -93,14 +93,14 @@
 			<!-- <img class="project_card__image" src="" alt="" /> -->
 
 			<div class="project_card__header">
-				<h2>botnet</h2>
+				<h2>remote admin tool</h2>
 				<p>
-					Simple botnet with 3 parts: server, client, and a web interface. The server is written in
+					Simple remote admin tool with 3 parts: server, client, and a web interface. The server is written in
 					python, the client in Nim, and the web interface using Astro.
 				</p>
 
 				<div class="project_card__links">
-					<a href="https://github.com/alec-jensen/botnet">GitHub</a>
+					<a href="https://github.com/alec-jensen/remote-admin-tool">GitHub</a>
 				</div>
 			</div>
 		</div>
