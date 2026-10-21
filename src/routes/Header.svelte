@@ -42,7 +42,7 @@
 				>
 			</li>
 			<li>
-				<a id="blog_link" href="https://blog.alecj.tk/" target="_blank">
+				<a id="blog_link" href="https://blog.alecj.com/" target="_blank">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="24px"
